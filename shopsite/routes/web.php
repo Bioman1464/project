@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home', ['categories' => App\Models\Category::all()]);
 });
