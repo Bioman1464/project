@@ -18,7 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string('title');
         });
 
-        Schema::create('item_category', function (Blueprint $table) {
+        Schema::create('category_item', function (Blueprint $table) {
             $table->unsignedInteger('item_id');
             $table->unsignedInteger('category_id');
 
