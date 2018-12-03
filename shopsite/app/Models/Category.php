@@ -12,7 +12,7 @@ class Category extends Model
 
     public $timestamps = false;
 
-    public function articles()
+    public function items()
     {
         return $this->belongsToMany(Item::class);
     }

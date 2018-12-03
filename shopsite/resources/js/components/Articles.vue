@@ -15,8 +15,8 @@
     <!-- <main class='articles'> -->
     <main class='container'>
         <div class="row">
-            <div v-for='category in categories' v-bind:key='category.id' class="col-3 sort_FAQ">
-                <div>{{ category.title }}</div>
+            <!-- <div v-for='category in categories' v-bind:key='category.id' class="col-3 sort_FAQ">
+                <div>{{ category.title }}</div> -->
             </div>
             <div class="col-3 product"></div>
             <div class="col-3 product"></div>
@@ -52,6 +52,11 @@
             <button @click="deleteArticle(article.id)" class="btn btn-danger">Delete</button>
         </article> -->
     </main>
+    <footer class='container-fluid'>
+        <div class='container'>
+            
+        </div>
+    </footer>
 </body>
 </template>
 <style></style>
