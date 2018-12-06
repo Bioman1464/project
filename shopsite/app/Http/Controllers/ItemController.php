@@ -28,7 +28,7 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($request)
     {
         $item = new Item;
         $item->title = $request->input('title');
