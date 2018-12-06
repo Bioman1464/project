@@ -67,7 +67,7 @@
                         </div>
                         <div>
                             <select v-model="item.categories" class="custom-select" multiple>
-                                <option v-for="category_item in categories" v-bind:key="category_item.id" :value="category_item.id">{{category_item.title}}</option>
+                                <option v-for="category in categories" v-bind:key="category.id" :value="category.id">{{category.title}}</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -81,6 +81,92 @@
                 </form>
             </div>
         </div>
+
+
+
+        <!-- <header id="header" class="container">
+            <div class='row'>
+                <div class='col-2 logo'></div>
+                <div class='col-3 offset-4 menu'></div>
+                <div class="col-2 search"></div>
+                <div class="col-1 trash"></div>
+            </div>
+            <div class="row">
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    Indicators
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
+                    The slideshow
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/11.png" alt="Los Angeles">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/22.png" alt="Chicago">
+                        </div>
+                    </div>
+                    Left and right controls
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <div class='container'>
+            <div class="row">
+                <div class="col-3 sort">
+                    <ul>
+                        <li><a href="" title="">ИКСС</a></li>
+                        <li><a href="" title="">РТС</a></li>
+                    </ul>
+                    
+                    
+                </div>
+                <div class="col-9">
+                    <div class="row">
+                        <div class="col-4 product">
+                            <Article v-for="item in items" v-bind:key="item.id">
+                                <h3>{{ item.title }}</h3>
+                                <span>{{ item.created_at | moment("DD.MM.YYYY") }}</span>
+                                <h4>Categories:</h4>
+                                <ul>
+                                    <li v-for="category in item.categories" v-bind:key="category.id">
+                                        <a href="#">{{category.title}}</a>
+                                    </li>
+                                </ul>
+                                <p>
+                                    {{ item.content }}
+                                </p>
+                                <button @click="deleteItem(item.id)" class="btn btn-danger">Delete</button>
+                            </Article>
+                        </div>
+                        <div class="col-4 product"></div>
+                        <div class="col-4 product"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 product"></div>
+                        <div class="col-4 product"></div>
+                        <div class="col-4 product"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 product"></div>
+                        <div class="col-4 product"></div>
+                        <div class="col-4 product"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <button type="button" class='btn btn-outline-dark'>More Results</button>
+            </div>
+        </div> -->
+
+
     </main>
 </template>
 
@@ -159,7 +245,7 @@
                         const response = await API.post(`/item/`, {
                             title: this.item.title,
                             content: this.item.content,
-                            categories: this.item.categories
+                            categories: this.item.categories.category
                         });
                         this.clearForm();
                         this.getItems();
