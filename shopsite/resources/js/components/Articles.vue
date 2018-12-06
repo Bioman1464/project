@@ -1,90 +1,90 @@
 <template>
     <main class="">
-        <header>
-            <h1>Items</h1>
-            <button data-target="#storeItem" data-toggle="modal" type="button" class="btn btn-primary add-Item">Add Item</button>
-            <hr>
-        </header>
+<!--         <header>
+    <h1>Items</h1>
+    <button data-target="#storeItem" data-toggle="modal" type="button" class="btn btn-primary add-Item">Add Item</button>
+    <hr>
+</header>
+<div>
+
+
+
+    <nav class="pagination" style="float: left;">
+        <li v-bind:class="[{disabled: !pagination.prev_page_url}]" class="page-item">
+            <a class="page-link" href="#" @click="getItems(pagination.prev_page_url)">Previous</a></li>
+        <li class="page-item disabled">
+            <a class="page-link text-dark" href="#">Page {{pagination.current_page}} of {{pagination.last_page}}</a>
+        </li>
+        <li v-bind:class="[{disabled: !pagination.next_page_url}]" class="page-item">
+            <a class="page-link" href="#" @click="getItems(pagination.next_page_url)">Next</a></li>
+    </nav>
+
+
+
+
+    <span class="total">Total: {{ pagination.total }} items</span>
+    <div style="float: right;">
         <div>
+            <button v-if="ordering.orderBy == 'created_at'" @click="ordering.orderBy = 'title'; getItems();" class="btn btn-primary" type="submit">By date</button>
+            <button v-if="ordering.orderBy == 'title'" @click="ordering.orderBy = 'created_at'; getItems();" class="btn btn-primary" type="submit">By title</button>
+            <button v-if="ordering.order == 'desc'" @click="ordering.order = 'asc'; getItems();" class="btn btn-primary" type="submit">DESC</button>
+            <button v-if="ordering.order == 'asc'" @click="ordering.order = 'desc'; getItems();" class="btn btn-primary" type="submit">ASC</button>
+        </div>
+    </div>
+</div>
 
 
+<Article v-for="item in items" v-bind:key="item.id">
+    <h3>{{ item.title }}</h3>
+    <span>{{ item.created_at | moment("DD.MM.YYYY") }}</span>
+    <h4>Categories:</h4>
+    <ul>
+        <li v-for="category in item.categories" v-bind:key="category.id">
+            <a href="#">{{category.title}}</a>
+        </li>
+    </ul>
+    <p>
+        {{ item.content }}
+    </p>
+    <button @click="deleteItem(item.id)" class="btn btn-danger">Delete</button>
+</Article>
 
-            <nav class="pagination" style="float: left;">
-                <li v-bind:class="[{disabled: !pagination.prev_page_url}]" class="page-item">
-                    <a class="page-link" href="#" @click="getItems(pagination.prev_page_url)">Previous</a></li>
-                <li class="page-item disabled">
-                    <a class="page-link text-dark" href="#">Page {{pagination.current_page}} of {{pagination.last_page}}</a>
-                </li>
-                <li v-bind:class="[{disabled: !pagination.next_page_url}]" class="page-item">
-                    <a class="page-link" href="#" @click="getItems(pagination.next_page_url)">Next</a></li>
-            </nav>
 
-
-
-
-            <span class="total">Total: {{ pagination.total }} items</span>
-            <div style="float: right;">
+Modal
+<div class="modal fade" id="storeItem" tabindex="-1" role="dialog" aria-labelledby="storeItemLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form @submit.prevent="addItem" class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" v-if="!edit" id="exampleModalLabel">Create Item</h5>
+                <h5 class="modal-title" v-else id="exampleModalLabel">Edit Item</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Title" v-model="item.title">
+                </div>
                 <div>
-                    <button v-if="ordering.orderBy == 'created_at'" @click="ordering.orderBy = 'title'; getItems();" class="btn btn-primary" type="submit">By date</button>
-                    <button v-if="ordering.orderBy == 'title'" @click="ordering.orderBy = 'created_at'; getItems();" class="btn btn-primary" type="submit">By title</button>
-                    <button v-if="ordering.order == 'desc'" @click="ordering.order = 'asc'; getItems();" class="btn btn-primary" type="submit">DESC</button>
-                    <button v-if="ordering.order == 'asc'" @click="ordering.order = 'desc'; getItems();" class="btn btn-primary" type="submit">ASC</button>
+                    <select v-model="item.categories" class="custom-select" multiple>
+                        <option v-for="category in categories" v-bind:key="category.id" :value="category.id">{{category.title}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Content" v-model="item.content"></textarea>
                 </div>
             </div>
-        </div>
-
-
-        <Article v-for="item in items" v-bind:key="item.id">
-            <h3>{{ item.title }}</h3>
-            <span>{{ item.created_at | moment("DD.MM.YYYY") }}</span>
-            <h4>Categories:</h4>
-            <ul>
-                <li v-for="category in item.categories" v-bind:key="category.id">
-                    <a href="#">{{category.title}}</a>
-                </li>
-            </ul>
-            <p>
-                {{ item.content }}
-            </p>
-            <button @click="deleteItem(item.id)" class="btn btn-danger">Delete</button>
-        </Article>
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="storeItem" tabindex="-1" role="dialog" aria-labelledby="storeItemLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <form @submit.prevent="addItem" class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" v-if="!edit" id="exampleModalLabel">Create Item</h5>
-                        <h5 class="modal-title" v-else id="exampleModalLabel">Edit Item</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Title" v-model="item.title">
-                        </div>
-                        <div>
-                            <select v-model="item.categories" class="custom-select" multiple>
-                                <option v-for="category in categories" v-bind:key="category.id" :value="category.id">{{category.title}}</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Content" v-model="item.content"></textarea>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button @click="clearForm()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                    </div>
-                </form>
+            <div class="modal-footer">
+                <button @click="clearForm()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
-        </div>
+        </form>
+    </div>
+</div> -->
 
 
 
-        <!-- <header id="header" class="container">
+        <header id="header" class="container">
             <div class='row'>
                 <div class='col-2 logo'></div>
                 <div class='col-3 offset-4 menu'></div>
@@ -122,7 +122,7 @@
             <div class="row">
                 <div class="col-3 sort">
                     <ul>
-                        <li><a href="" title="">ИКСС</a></li>
+                        <li><a href="/product" title="">ИКСС</a></li>
                         <li><a href="" title="">РТС</a></li>
                     </ul>
                     
@@ -164,7 +164,7 @@
             <div class="row justify-content-center">
                 <button type="button" class='btn btn-outline-dark'>More Results</button>
             </div>
-        </div> -->
+        </div>
 
 
     </main>
