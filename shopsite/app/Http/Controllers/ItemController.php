@@ -6,6 +6,7 @@ use App\Models\Item;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Resources\ItemResource;
+use Illuminate\Support\Facades\DB;
 
 class ItemController extends Controller
 {
@@ -42,7 +43,7 @@ class ItemController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Item  $item
+     * @param  \App\Models\Item $item
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -56,8 +57,8 @@ class ItemController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Item  $item
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Models\Item $item
      * @return \Illuminate\Http\Response
      */
     public function update($id, Request $request)
@@ -77,7 +78,7 @@ class ItemController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Item  $item
+     * @param  \App\Models\Item $item
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -87,6 +88,17 @@ class ItemController extends Controller
         if ($item->delete()) {
             return new ItemResource($item);
         }
+    }
+
+    public function showItem(Request $request, $item)
+    {
+        $results = DB::table('items')
+            ->join('categories', 'categories.id', '=', 'items.id')
+            ->select('items.id', 'items.title', 'items.content')
+            ->where('items.id', '=', $item)
+            ->get();
+
+        return response()->json($results);
     }
 }
 
