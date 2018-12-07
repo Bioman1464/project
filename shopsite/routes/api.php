@@ -21,5 +21,6 @@ Route::get('item/{id}', 'ItemController@show');
 Route::delete('item/{id}', 'ItemController@destroy');
 Route::post('item/', 'ItemController@create');
 Route::put('item/{id}', 'ItemController@update');
+Route::get('item/{id}', 'ItemController@showItem');
 
 Route::get('categories', 'CategoryController@index');
