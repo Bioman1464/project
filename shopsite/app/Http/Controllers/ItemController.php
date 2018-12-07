@@ -32,8 +32,8 @@ class ItemController extends Controller
     public function create($request)
     {
         $item = new Item;
-        $item->title = $request->input('title');
-        $item->content = $request->input('content');
+        $item->name = $request->input('name');
+        $item->discription = $request->input('discription');
         if ($item->save()) {
             $item->categories()->attach($request->input('categories'));
             return new ItemResource($item);
@@ -67,8 +67,8 @@ class ItemController extends Controller
 
         $item->categories()->detach($item->categories);
 
-        $item->title = $request->input('title');
-        $item->content = $request->input('content');
+        $item->name = $request->input('name');
+        $item->discription = $request->input('discription');
         if ($item->save()) {
             $item->categories()->attach($request->input('categories'));
             return new ItemResource($item);
@@ -94,7 +94,7 @@ class ItemController extends Controller
     {
         $results = DB::table('items')
             ->join('categories', 'categories.id', '=', 'items.id')
-            ->select('items.id', 'items.title', 'items.content')
+            ->select('items.id', 'items.name','items.price', 'items.color', 'items.discription')
             ->where('items.id', '=', $item)
             ->get();
 
