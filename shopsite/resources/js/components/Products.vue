@@ -1,7 +1,7 @@
 <template>
     <main>
     <Article v-for="item in items" v-bind:key="item.id">
-            <h3>{{ item.title }}</h3>
+            <h3>{{ item.name }}</h3>
             <span>{{ item.created_at | moment("DD.MM.YYYY") }}</span>
             <h4>Categories:</h4>
             <ul>
@@ -10,7 +10,7 @@
                 </li>
             </ul>
             <p>
-                {{ item.content }}
+                {{ item.name }}
             </p>
             <button @click="deleteItem(item.id)" class="btn btn-danger">Delete</button>
     </Article>
@@ -26,17 +26,43 @@
     export default {
         data() {
             return {
-                items: [],
+                /*items: [],
                 item: {
                     id: "",
-                    title: "",
+                    name: "",
                     content: "",
                     categories: [],
                     category: {
                         id: "",
                         title: ""
                     }
+                },*/
+
+                items: [],
+                item: {
+                    id: "",
+                    name: "",
+                    price: "",
+                    color: "",
+                    desciprtion: ""
                 },
+                categories: [],
+                category: {
+                    id: "",
+                    title: ""
+                },
+                users: [],
+                user: {
+                    id: "",
+                    name: "",
+                    email: "",
+                    email_verified_at: "",
+                    password: ""                    
+                },
+
+
+
+
                 item_id: "",
                 ordering: {
                     orderBy: "created_at",

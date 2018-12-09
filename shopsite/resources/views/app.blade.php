@@ -10,7 +10,7 @@
     <link href="{!! asset('css/app.css') !!}" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div id="app" class="container">
+    <div id="app" class="">
         @yield('content')
     </div>
     <script type="text/javascript" src="{!! asset('js/app.js') !!}"></script>
