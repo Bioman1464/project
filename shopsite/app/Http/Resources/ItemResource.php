@@ -18,8 +18,10 @@ class ItemResource extends JsonResource
 
         return [
             'id' => $this->id,
-            'title' => $this->title,
-            'content' => $this->content,
+            'name' => $this->name,
+            'price' => $this->price,
+            'color' => $this->color,
+            'discription' => $this->discription,
             'categories' => CategoryResource::collection($this->categories),
             'created_at' => (string)$this->created_at,
         ];
