@@ -88,17 +88,17 @@
         <header id="header" class="container-fluid">
             
                 <div class='row'>
-                    <div class='col-2 logo'>
+                    <div class='col-xl-2 col-md-2 col-sm-1 col-1 logo'>
                         <img src="svg/img/logo.png" alt="">
                     </div>
-                    <div class='col-2 offset-5 menu'>
+                    <div class='col-xl-7 col-md-6 col-sm-6 col-6 menu text-right'>
                         <a href="#" title="">Sign up/Sign in</a>
                         <a href="#" title="">Help</a>
                     </div>
-                    <div class="col-2 search">
+                    <div class="col-xl-2 col-md-2 col-sm-3 col-3 search">
                         <input type="text" placeholder="Search">
                     </div>
-                    <div class="col-1 trash">
+                    <div class="col-xl-1 col-md-2 col-sm-2 col-2 trash text-right">
                         <a href="#" title=""><img src="svg/img/trash.png" alt=""></a>
                     </div>
                 </div>
@@ -266,7 +266,7 @@
                     <nav class='col-xl-12'>
                         <ul class="pagination justify-content-center">
                             <div class="link-prev" v-bind:class="[{disabled: !pagination.prev_page_url}]">
-                                <button class="btn orange prev" href="#" @click="getItems(pagination.prev_page_url)">Previous</button>
+                                <button class="btn orange prev" href="#" @click="getItems(pagination.prev_page_url)">Prev</button>
                             </div>
                             <li class="page-item page-number">Page {{pagination.current_page}} of {{pagination.last_page}}</li>
                             <!-- <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -297,27 +297,34 @@
         </div>
     
 
-        <section class='section5 container-fluid'>
-        <div class='foot1 container'>
-            <div class='row'>
-                <div class='col-6 left-block'>
-                    <div class='foot2'><div>Copyright 2018 | BonchDev</div><div>Все права защищены.</div>
-                </div>
-                <div class='foot3'>|</div>
-                    <div class='foot-nav'>
-                          <ul>
-                            <li><a href="">Главная</a></li>
-                            <li><a href="">Статьи</a></li>
-                            <li><a href="">Контакты</a></li>
-                          </ul>
-                    </div>
-                </div>
-              <div class='col-6'>
-                <div class='footlabel'><img src="img/bonch.png" alt="">bonch.dev</div>
-              </div>
+    <footer class='container-fluid foot'>
+        <div class='container'>
+            <div class='row bonch-merch'>
+                <div>Bonch.Merch</div>
             </div>
-      </div>
-    </section>
+            <div class="row foot-nav">
+                <div class="col-xl-2 col-md-3 col-sm-3 col-3">
+                    <a href="" title="">Поддержка</a>
+                    <br>
+                    <a href="" title="">FAQ</a>
+                    <br>
+                    <a href="" title="">Корзина</a>
+                </div>
+                <div class="col-xl-2 col-md-3 col-sm-3 col-3">
+                    <a href="" title="">Авторизация</a>
+                    <br>
+                    <a href="" title="">Terms of service</a>
+                    <br>
+                    <a href="" title="">Сотрудничество</a>
+                </div>
+                <div class="col-xl-8 col-md-6 col-sm-6 col-6">
+                    <img class='float-right' src="svg/img/face.png" width="50px" alt="">
+                    <img class='float-right' src="svg/img/inst.png" width="50px" alt="">
+                    <div class='float-right social'>Мы в соцсетях: </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
 
@@ -422,16 +429,50 @@
 @media (min-width: 400px) and (max-width: 600px) {
     .price{
         margin-bottom: 60px;
+    } 
+    
+}
+
+@media (min-width: 400px) and (max-width: 768px){
+    .foot{
+        min-height: 200px;
     }
+    .search input{
+        width: 140px;
+    }
+    .social{
+        display: none;
+    }
+}
+
+.foot{
+    background: rgba(230, 190, 158, 1);
+    height: 140px;
+}
+
+.foot-nav{
+    padding-top: 15px;
+    font-size: 16px;
+}
+
+.foot-nav a{
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+}
+
+.foot-nav a:hover{
+    font-weight: bold;
+    font-style: normal;
 }
 
 .img-stack-min{
     margin-top: 30px;
 }
 
-/* .img-stack-min img{
-    max-height: 200px;
-} */
+.bonch-merch{
+    font-size: 24px;
+}
 
 .img-stack{
     margin-bottom: 20px;
@@ -450,7 +491,8 @@
 }
 
 main{
-    background: white;
+    background: rgba(224, 224, 224, 1);
+    font-family: Segoe UI, sans-serif;
 }
 
 header{
@@ -491,8 +533,6 @@ header{
 
 .search{
     height: 40px;
-    /* padding-top: 15px; */
-    /* background: gray; */
 }
 
 .search input{
@@ -529,6 +569,7 @@ header{
 
 .products-filter h4{
     font-weight: bold;
+    text-align: center;
 }
 
 .products-filter a{
@@ -538,6 +579,7 @@ header{
     font-size: 18px;
     color: rgba(38, 37, 36, 0.9);
     font-style: italic;
+    margin-left: 7px;
 }
 
 .products-filter a:hover{
@@ -547,11 +589,11 @@ header{
 
 .product{
     height: 400px;
-    border: 2px solid rgba(224, 208, 195, 1);
+    border: 3px solid rgba(224, 208, 195, 1);
     position: relative;
     margin-bottom: 10px;
     margin-right: 5px;
-    background: rgba(219, 199, 180, 1);
+    background: white;
 }
 
 .product-block{
@@ -694,6 +736,9 @@ header{
 
 .products-filter{
     margin-bottom: 20px;
+    background: white;
+    margin-top: 5px;
+    border: 2px solid rgba(224, 208, 195, 1);
 }
 
 .carousel-indicators li{
@@ -759,23 +804,7 @@ footer{
                         email_verified_at: "",
                         password: ""
                     
-                },
-
-            
-
-
-        //     Schema::create('users', function (Blueprint $table) {
-        //     $table->increments('id');
-        //     $table->string('name');
-        //     $table->string('email')->unique();
-        //     $table->timestamp('email_verified_at')->nullable();
-        //     $table->string('password');
-        //     $table->rememberToken();
-        //     $table->timestamps();
-        // });
-
-
-
+                }, 
                 item_id: "",
                 ordering: {
                     orderBy: "created_at",
