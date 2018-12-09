@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'ItemController@show', function(){
+Route::get('/', 'ItemController@index', function(){
     return view('home', ['categories' => App\Models\Category::all()]);
 });
 
