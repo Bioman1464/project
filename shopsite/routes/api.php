@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('items', 'ItemController@index');
-Route::get('item/{id}', 'ItemController@show');
+Route::get('items', 'ItemController@show');
 Route::delete('item/{id}', 'ItemController@destroy');
 Route::post('item/', 'ItemController@create');
 Route::put('item/{id}', 'ItemController@update');
