@@ -11,7 +11,7 @@ class ItemsSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\Item::class, 9)->create()->each(function ($item) {
+        factory(App\Models\Item::class, 30)->create()->each(function ($item) {
             $category_ids = [];
             for ($i = 1; $i <= random_int(1, 1); $i++) {
                 $category_id = App\Models\Category::all()->random()->id;
