@@ -52593,7 +52593,7 @@ exports = module.exports = __webpack_require__(13)(false);
 
 
 // module
-exports.push([module.i, "\n@media (min-width: 400px) and (max-width: 600px) {\n.price{\r\n        margin-bottom: 60px;\n}\n}\n@media (min-width: 400px) and (max-width: 768px){\n.foot{\r\n        min-height: 200px;\n}\n.search input{\r\n        width: 130px;\n}\n.social{\r\n        display: none;\n}\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n@media (min-width: 400px) and (max-width: 600px) {\n.price{\r\n        margin-bottom: 60px;\n}\n}\n@media (min-width: 400px) and (max-width: 768px){\n.foot{\r\n        min-height: 200px;\n}\n.search input{\r\n        width: 140px;\n}\n.social{\r\n        display: none;\n}\n}\n.foot{\r\n    background: rgba(230, 190, 158, 1);\r\n    height: 140px;\n}\n.foot-nav{\r\n    padding-top: 15px;\r\n    font-size: 16px;\n}\n.foot-nav a{\r\n    text-decoration: none;\r\n    color: black;\r\n    font-style: italic;\n}\n.foot-nav a:hover{\r\n    font-weight: bold;\r\n    font-style: normal;\n}\n.img-stack-min{\r\n    margin-top: 30px;\n}\n.bonch-merch{\r\n    font-size: 24px;\n}\n.img-stack{\r\n    margin-bottom: 20px;\n}\n.img-center{\r\n    /* width: 225px; */\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    /* margin-top: 10px; */\n}\n.img-stack-big img{\r\n    min-height: 296px;\n}\nmain{\r\n    background: rgba(224, 224, 224, 1);\r\n    font-family: Segoe UI, sans-serif;\n}\nheader{\r\n    /* text-align: center; */\r\n    height: 60px;\r\n    background: rgba(230, 190, 158, 1);\r\n    width: 100%;\r\n    /* color: #fff; */\n}\r\n\r\n/* .header-panel{\r\n    background: transparent;\r\n} */\n.logo{\r\n    height: 40px;\r\n    /* background: green; */\n}\n.logo img {\r\n    max-height: 40px;\r\n    margin-top: 10px;\n}\n.menu{\r\n    height: 40px;\n}\n.menu a{\r\n    margin-top: 20px;\r\n    color: black;\r\n    display: inline-block;\n}\n.menu a:last-child{\r\n    margin-left: 15px;\n}\n.search{\r\n    height: 40px;\n}\n.search input{\r\n    border: 1x solid black;\r\n    border-radius: 10px 10px;\r\n    white-space: nowrap;\r\n    background: rgba(224, 208, 195, 1);\r\n    padding-left: 5px;\r\n    margin-top: 15px;\n}\n.search input:focus{\r\n    outline: none;\n}\n.trash img{\r\n    height: 40px;\r\n    margin-top: 10px;\r\n    margin-left: 15px;\r\n    /* background: green; */\n}\n#demo{\r\n    /* height: 240px; */\r\n    /* background: pink; */\r\n    margin-bottom: 40px;\r\n    /* margin-top: 20px; */\n}\n.page-number{\r\n    margin-top: 7px;\r\n    font-style: italic;\n}\n.products-filter h4{\r\n    font-weight: bold;\r\n    text-align: center;\n}\n.products-filter a{\r\n    text-decoration: none;\r\n    display: block;\r\n    color: black;\r\n    font-size: 18px;\r\n    color: rgba(38, 37, 36, 0.9);\r\n    font-style: italic;\r\n    margin-left: 7px;\n}\n.products-filter a:hover{\r\n    font-weight: bold;\r\n    font-style: normal;\n}\n.product{\r\n    height: 400px;\r\n    border: 3px solid rgba(224, 208, 195, 1);\r\n    position: relative;\r\n    margin-bottom: 10px;\r\n    margin-right: 5px;\r\n    background: white;\n}\n.product-block{\r\n    padding: 5px;\n}\n.product-img{\r\n    /* width: auto;\r\n    height: auto; */\r\n    /* justify-content: center;\r\n    align-items: center;\r\n    margin-top: 10px; */\r\n    max-width: 1000px;\r\n    max-height: 1000px;\n}\n.product-img img{\r\n    width: 100%;\r\n    height: auto;\r\n    margin-top: 15px;\n}\n.item-name{\r\n    margin-top: 20px;\r\n    text-align: center;\n}\n.btn{\r\n    color: #333;\r\n    border-radius: 0;\r\n    background: #fff;\r\n    overflow: hidden;\r\n    text-transform: uppercase;\r\n    position: relative;\r\n    z-index: 1;\r\n    -webkit-transition: all 0.40s ease 0s;\r\n    transition: all 0.40s ease 0s;\r\n    margin-right: 15px;\r\n    margin-left: 15px;\n}\n.btn:hover{\r\n    color: #fff !important;\n}\n.btn.prev:after{\r\n    content: \"\";\r\n    width: 100%;\r\n    height: 100%;\r\n    position: absolute;\r\n    top: 0;\r\n    right: -100%;\r\n    z-index: -1;\r\n    -webkit-transition: right 0.40s ease 0s;\r\n    transition: right 0.40s ease 0s;\n}\n.btn.prev:hover:after{\r\n    right: 0;\n}\n.btn.orange.prev{\r\n    border-right: 3px solid #f88030;\n}\n.btn.next:after{\r\n    content: \"\";\r\n    width: 100%;\r\n    height: 100%;\r\n    position: absolute;\r\n    top: 0;\r\n    left: -100%;\r\n    z-index: -1;\r\n    -webkit-transition: left 0.40s ease 0s;\r\n    transition: left 0.40s ease 0s;\n}\n.btn.next:hover:after{\r\n    left: 0;\n}\n.btn.orange.next{\r\n    border-left: 3px solid #f88030;\n}\n.btn.orange:after{\r\n    background: #f49c63;\n}\n.pagination{\r\n    margin-top: 20px;\n}\n.buy{\r\n    font-size: 22px;\r\n    text-decoration: none;\r\n    outline: none;\r\n    display: inline-block;\r\n    padding: 5px 15px;\r\n    /* margin: 10px 20px; */\r\n    position: relative;\r\n    overflow: hidden;\r\n    border: 2px solid #fe6637;\r\n    border-radius: 8px;\r\n    /* font-family: 'Montserrat', sans-serif;  */\r\n    color: #fe6637;\r\n    -webkit-transition: .2s ease-in-out;\r\n    transition: .2s ease-in-out;\r\n    position: absolute;\r\n    right: 5px;\r\n    bottom: 5px;\r\n    /* position: relative; */\r\n/*     top: 240px;\r\n    right: 10px; */\n}\n.buy:before {\r\n    content: \"\";\r\n    background: -webkit-gradient(linear, left top, right top, from(rgba(255,255,255,.1)), to(rgba(255,255,255,.5)));\r\n    background: linear-gradient(90deg, rgba(255,255,255,.1), rgba(255,255,255,.5));\r\n    height: 70px;\r\n    width: 70px;\r\n    position: absolute;\r\n    top: 0px;\r\n    left: -105px;\r\n    -webkit-transform: skewX(-45deg);\r\n            transform: skewX(-45deg);\n}\n.buy:hover {\r\n    background: #fe6637;\r\n    color: #fff;\n}\n.buy:hover:before {\r\n    left: 150px;\r\n    -webkit-transition: .5s ease-in-out;\r\n    transition: .5s ease-in-out;\n}\n.price{\r\n    position: absolute;\r\n    bottom: 15px;\r\n    left: 10px;\r\n    font-size: 20px;\n}\n.carousel-item img{\r\n    max-width: 100%;\n}\n.carousel-control-prev-icon{\r\n    /* background-color: black; */\n}\n.products-filter{\r\n    margin-bottom: 20px;\r\n    background: white;\r\n    margin-top: 5px;\r\n    border: 2px solid rgba(224, 208, 195, 1);\n}\n.carousel-indicators li{\r\n    width: 15px;\r\n    height: 15px;\r\n    border-radius: 50%;\r\n/*     background-color: gray; */\n}\n.carousel-indicators .active{\r\n    background-color: gray;\n}\n.nav-btn-prev{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: start;\r\n        -ms-flex-pack: start;\r\n            justify-content: flex-start;\n}\n.nav-btn-next{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: end;\r\n        -ms-flex-pack: end;\r\n            justify-content: flex-end;\n}\n.nav-btn-prev button, .nav-btn-next button{\r\n    min-width: 50px;\r\n    padding: 0 10px;\n}\nfooter{\r\n    height: 50px;\r\n    background: rgba(56, 52, 49, 1);\n}\n.footer-panel{\r\n    background: rgba(56, 52, 49, 1);\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -52985,6 +52985,445 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -53010,6 +53449,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                 email: "",
                 email_verified_at: "",
                 password: ""
+
             },
             item_id: "",
             ordering: {
@@ -53098,16 +53538,6 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                     alert(e);
                 });
             }
-        },
-        getProduct: function getProduct(id) {
-            var _this3 = this;
-
-            __WEBPACK_IMPORTED_MODULE_1__api_common_js__["a" /* API */].get("/product/" + id).then(function (response) {
-                // alert("Item has been removed");
-                _this3.getItems();
-            }).catch(function (e) {
-                alert(e);
-            });
         },
         addItem: function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
@@ -53972,118 +54402,6 @@ var render = function() {
   return _c("main", [
     _vm._m(0),
     _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "modal fade",
-        attrs: {
-          id: "storeItem",
-          tabindex: "-1",
-          role: "dialog",
-          "aria-labelledby": "storeItemLabel",
-          "aria-hidden": "true"
-        }
-      },
-      [
-        _c(
-          "div",
-          { staticClass: "modal-dialog", attrs: { role: "document" } },
-          [
-            _c("form", { staticClass: "modal-content" }, [
-              _c("div", { staticClass: "modal-header" }, [
-                !_vm.edit
-                  ? _c(
-                      "h5",
-                      {
-                        staticClass: "modal-title",
-                        attrs: { id: "exampleModalLabel" }
-                      },
-                      [_vm._v("Sign up / Sign in")]
-                    )
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "modal-body" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("p", { staticClass: "text-center" }, [_vm._v("Sign up")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.item.title,
-                        expression: "item.title"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text", placeholder: "Title" },
-                    domProps: { value: _vm.item.title },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.item, "title", $event.target.value)
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div"),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.item.content,
-                        expression: "item.content"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { placeholder: "Content" },
-                    domProps: { value: _vm.item.content },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.item, "content", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "modal-footer" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-secondary",
-                    attrs: { type: "button", "data-dismiss": "modal" },
-                    on: {
-                      click: function($event) {
-                        _vm.clearForm()
-                      }
-                    }
-                  },
-                  [_vm._v("Close")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-                  [_vm._v("Save changes")]
-                )
-              ])
-            ])
-          ]
-        )
-      ]
-    ),
-    _vm._v(" "),
     _vm._m(1),
     _vm._v(" "),
     _vm._m(2),
@@ -54104,46 +54422,23 @@ var render = function() {
                   staticClass: "col-9 col-sm-10 col-lg-6 col-xl-4 product-block"
                 },
                 [
-                  _c(
-                    "div",
-                    { staticClass: "col-12 product" },
-                    [
-                      _vm._m(4, true),
-                      _vm._v(" "),
-                      _vm._l(item.categories, function(category) {
-                        return _c("h6", { key: category.id }, [
-                          _vm._v(
-                            "\n                                " +
-                              _vm._s(category.title) +
-                              "\n                            "
-                          )
-                        ])
-                      }),
-                      _vm._v(" "),
-                      _c("h4", { staticClass: "item-name" }, [
-                        _vm._v(_vm._s(item.desciprtion))
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "price" }, [
-                        _vm._v("Price: " + _vm._s(item.id) + " rub")
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "buy",
-                          attrs: { href: "#", title: "" },
-                          on: {
-                            click: function($event) {
-                              _vm.getProduct(item.id)
-                            }
-                          }
-                        },
-                        [_vm._v("Button")]
-                      )
-                    ],
-                    2
-                  )
+                  _c("div", { staticClass: "col-12 product" }, [
+                    _vm._m(4, true),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "item-name" }, [
+                      _vm._v("Description of product")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "price" }, [
+                      _vm._v("Price: " + _vm._s(item.id) + " rub")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      { staticClass: "buy", attrs: { href: "", title: "" } },
+                      [_vm._v("Button")]
+                    )
+                  ])
                 ]
               )
             })
@@ -54232,18 +54527,9 @@ var staticRenderFns = [
             "div",
             { staticClass: "col-xl-7 col-md-6 col-sm-6 col-6 menu text-right" },
             [
-              _c(
-                "a",
-                {
-                  attrs: {
-                    href: "#",
-                    title: "",
-                    "data-target": "#storeItem",
-                    "data-toggle": "modal"
-                  }
-                },
-                [_vm._v("Sign up/Sign in")]
-              ),
+              _c("a", { attrs: { href: "#", title: "" } }, [
+                _vm._v("Sign up/Sign in")
+              ]),
               _vm._v(" "),
               _c("a", { attrs: { href: "#", title: "" } }, [_vm._v("Help")])
             ]
