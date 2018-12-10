@@ -18,7 +18,7 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->float('price');
             $table->string('color');
-            $table->string('discription');
+            $table->text('discription');
 
             $table->timestamps();
         });

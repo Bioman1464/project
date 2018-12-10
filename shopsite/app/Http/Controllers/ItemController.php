@@ -46,11 +46,13 @@ class ItemController extends Controller
      * @param  \App\Models\Item $item
      * @return \Illuminate\Http\Response
      */
-    public function showItem(Item $item)
+    public function show($id)
     {
-        return response()->json($item);
+        $item = Item::findOrFail($id);
+        if ($item) {
+            return new ItemResource($item);
+        }
     }
-
 
     /**
      * Update the specified resource in storage.
@@ -88,19 +90,15 @@ class ItemController extends Controller
         }
     }
 
-//    public function showItem(Request $request, $item)
-//    {
-//        $results = DB::table('items')
-//            ->join('categories', 'categories.id', '=', 'items.id')
-//            ->select('items.id', 'items.name','items.price', 'items.color', 'items.discription')
-//            ->where('items.id', '=', $item)
-//            ->get();
-//
-//        return response()->json($results);
-//    }
+    public function showItem(Request $request, $item)
+    {
+        $results = DB::table('items')
+            ->join('categories', 'categories.id', '=', 'items.id')
+            ->select('items.id', 'items.name','items.price', 'items.color', 'items.discription')
+            ->where('items.id', '=', $item)
+            ->get();
 
-    public function show(){
-        return response()->json(Item::all());
+        return response()->json($results);
     }
 }
 
