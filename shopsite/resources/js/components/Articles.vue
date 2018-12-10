@@ -116,16 +116,26 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <p class='text-center'>Sign up</p>
-                    <input type="text" class="form-control" placeholder="Title" v-model="item.title">
+                    <h3 class='text-center'>Sign up</h3>
+
+                    
                 </div>
                 <div>
+
+                <div class='form-group'>
+                    <label for="InputEmail">Email address</label>
+                    <input id="InputEmail" type="email" class="form-control" placeholder="Enter Email" 
+                        aria-describedby="emailHelp" v-model="user.email">
+                </div>    
                     <!-- <select v-model="item.categories" class="custom-select" multiple>
                         <option v-for="category in categories" v-bind:key="category.id" :value="category.id">{{category.title}}</option>
                     </select> -->
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" placeholder="Content" v-model="item.content"></textarea>
+                    <label for='InputPassword'>Password</label>
+                    <input id='InputPassword' type="password" class='form-control' placeholder="Enter Password" 
+                        v-model="user.password">
+                    <!-- <textarea class="form-control" placeholder="Content" v-model="item.content"></textarea> -->
                 </div>
             </div>
             <div class="modal-footer">
@@ -159,7 +169,7 @@
                         <span class="carousel-control-prev-icon"></span>
                     </a>
                     <a class="carousel-control-next" href="#demo" data-slide="next">
-                        <span class=""><img src="img/round-play-button.png" alt=""></span>
+                        <span class="carousel-control-next-icon"></span>
                     </a>
                 </div>
             </div>
@@ -258,8 +268,8 @@
                                 <h6 v-for="category in item.categories" v-bind:key="category.id">
                                     {{ category.title }}
                                 </h6>
-                                <h4 class='item-name'>{{item.desciprtion}}</h4>
-                                    <p class='price'>Price: {{ item.id }} rub</p>        
+                                <h5 class='item-name'>{{ item.name }}</h5>
+                                    <p class='price'>Price: {{ item.price }} rub</p>        
                                     <a href='#' title="" @click="getProduct(item.id)" class='buy'>Button</a>       
                             </div>                 
                         </div>
@@ -350,7 +360,7 @@
                     name: "",
                     price: "",
                     color: "",
-                    desciprtion: ""
+                    description: ""
                 },
                 categories: [],
                 category: {
@@ -391,6 +401,7 @@
                     alert(error);
                 }
             },
+
             getItems(page_url = "/items?page=" + this.pagination.current_page + "&orderBy=" +
             this.ordering.orderBy + "&order=" + this.ordering.order) {
                 let self = this;
@@ -418,7 +429,7 @@
             },
 
             getProduct(id){              
-                    API.get(`/product/${id}`)
+                    API.get(`/${id}`)
                         .then(response => {
                             // alert("Item has been removed");
                             this.getItems();
@@ -428,8 +439,7 @@
                         });  
             },
             
-
-            async addItem() {
+            /*async addItem() {
                 if (this.edit === false) {
                     try {
                         const response = await API.post(`/item/`, {
@@ -444,14 +454,15 @@
                         alert(error);
                     }
                 }
-            },
+            },*/
             clearForm() {
-                this.edit = false;
-                this.item.id = null;
+                // this.edit = false;
+                // this.item.id = null;
 // this.item.item_id = null;
-                this.item.title = "";
-                this.item.body = "";
+                this.user.email = "";
+                this.user.password = "";
             },
+
             getPagination(meta, links) {
 // console.log(meta);
 // console.log(links);

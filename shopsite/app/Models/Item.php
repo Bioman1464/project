@@ -25,9 +25,15 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Item extends Model
 {
+
     protected $fillable = [
-        'title', 'content'
+        'name', 'price', 'color', 'description'
     ];
+
+
+    /*protected $fillable = [
+        'title', 'content'
+    ];*/
 
     public function categories()
     {

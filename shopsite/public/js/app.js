@@ -52985,6 +52985,16 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -52996,7 +53006,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                 name: "",
                 price: "",
                 color: "",
-                desciprtion: ""
+                description: ""
             },
             categories: [],
             category: {
@@ -53102,68 +53112,37 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         getProduct: function getProduct(id) {
             var _this3 = this;
 
-            __WEBPACK_IMPORTED_MODULE_1__api_common_js__["a" /* API */].get("/product/" + id).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1__api_common_js__["a" /* API */].get("/" + id).then(function (response) {
                 // alert("Item has been removed");
                 _this3.getItems();
             }).catch(function (e) {
                 alert(e);
             });
         },
-        addItem: function () {
-            var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
-                var response;
-                return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
-                    while (1) {
-                        switch (_context2.prev = _context2.next) {
-                            case 0:
-                                if (!(this.edit === false)) {
-                                    _context2.next = 13;
-                                    break;
-                                }
 
-                                _context2.prev = 1;
-                                _context2.next = 4;
-                                return __WEBPACK_IMPORTED_MODULE_1__api_common_js__["a" /* API */].post("/item/", {
-                                    title: this.item.title,
-                                    content: this.item.content,
-                                    categories: this.item.categories.category
-                                });
 
-                            case 4:
-                                response = _context2.sent;
-
-                                this.clearForm();
-                                this.getItems();
-                                alert("Item has been added");
-                                _context2.next = 13;
-                                break;
-
-                            case 10:
-                                _context2.prev = 10;
-                                _context2.t0 = _context2["catch"](1);
-
-                                alert(_context2.t0);
-
-                            case 13:
-                            case "end":
-                                return _context2.stop();
-                        }
-                    }
-                }, _callee2, this, [[1, 10]]);
-            }));
-
-            function addItem() {
-                return _ref2.apply(this, arguments);
+        /*async addItem() {
+            if (this.edit === false) {
+                try {
+                    const response = await API.post(`/item/`, {
+                        title: this.item.title,
+                        content: this.item.content,
+                        categories: this.item.categories.category
+                    });
+                    this.clearForm();
+                    this.getItems();
+                    alert("Item has been added");
+                } catch (error) {
+                    alert(error);
+                }
             }
-
-            return addItem;
-        }(),
+        },*/
         clearForm: function clearForm() {
-            this.edit = false;
-            this.item.id = null;
+            // this.edit = false;
+            // this.item.id = null;
             // this.item.item_id = null;
-            this.item.title = "";
-            this.item.body = "";
+            this.user.email = "";
+            this.user.password = "";
         },
         getPagination: function getPagination(meta, links) {
             // console.log(meta);
@@ -54004,53 +53983,70 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("div", [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "InputEmail" } }, [
+                      _vm._v("Email address")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.user.email,
+                          expression: "user.email"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        id: "InputEmail",
+                        type: "email",
+                        placeholder: "Enter Email",
+                        "aria-describedby": "emailHelp"
+                      },
+                      domProps: { value: _vm.user.email },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.user, "email", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
                 _c("div", { staticClass: "form-group" }, [
-                  _c("p", { staticClass: "text-center" }, [_vm._v("Sign up")]),
+                  _c("label", { attrs: { for: "InputPassword" } }, [
+                    _vm._v("Password")
+                  ]),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.item.title,
-                        expression: "item.title"
+                        value: _vm.user.password,
+                        expression: "user.password"
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: { type: "text", placeholder: "Title" },
-                    domProps: { value: _vm.item.title },
+                    attrs: {
+                      id: "InputPassword",
+                      type: "password",
+                      placeholder: "Enter Password"
+                    },
+                    domProps: { value: _vm.user.password },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(_vm.item, "title", $event.target.value)
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div"),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.item.content,
-                        expression: "item.content"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { placeholder: "Content" },
-                    domProps: { value: _vm.item.content },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.item, "content", $event.target.value)
+                        _vm.$set(_vm.user, "password", $event.target.value)
                       }
                     }
                   })
@@ -54084,13 +54080,13 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
     _vm._m(2),
+    _vm._v(" "),
+    _vm._m(3),
     _vm._v(" "),
     _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "row" }, [
-        _vm._m(3),
+        _vm._m(4),
         _vm._v(" "),
         _c("div", { staticClass: "col-8 col-xl-10 col-md-9 col-sm-8" }, [
           _c(
@@ -54108,7 +54104,7 @@ var render = function() {
                     "div",
                     { staticClass: "col-12 product" },
                     [
-                      _vm._m(4, true),
+                      _vm._m(5, true),
                       _vm._v(" "),
                       _vm._l(item.categories, function(category) {
                         return _c("h6", { key: category.id }, [
@@ -54120,12 +54116,12 @@ var render = function() {
                         ])
                       }),
                       _vm._v(" "),
-                      _c("h4", { staticClass: "item-name" }, [
-                        _vm._v(_vm._s(item.desciprtion))
+                      _c("h5", { staticClass: "item-name" }, [
+                        _vm._v(_vm._s(item.name))
                       ]),
                       _vm._v(" "),
                       _c("p", { staticClass: "price" }, [
-                        _vm._v("Price: " + _vm._s(item.id) + " rub")
+                        _vm._v("Price: " + _vm._s(item.price) + " rub")
                       ]),
                       _vm._v(" "),
                       _c(
@@ -54211,7 +54207,7 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(5)
+    _vm._m(6)
   ])
 }
 var staticRenderFns = [
@@ -54274,6 +54270,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("h3", { staticClass: "text-center" }, [_vm._v("Sign up")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "row" }, [
         _c(
@@ -54321,13 +54325,7 @@ var staticRenderFns = [
                 staticClass: "carousel-control-next",
                 attrs: { href: "#demo", "data-slide": "next" }
               },
-              [
-                _c("span", {}, [
-                  _c("img", {
-                    attrs: { src: "img/round-play-button.png", alt: "" }
-                  })
-                ])
-              ]
+              [_c("span", { staticClass: "carousel-control-next-icon" })]
             )
           ]
         )
