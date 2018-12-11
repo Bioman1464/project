@@ -19,7 +19,7 @@ class ItemController extends Controller
     {
         $orderBy = $request->input('orderBy') ?? 'created_at';
         $order = $request->input('order') ?? 'desc';
-        $items = Item::orderBy($orderBy, $order)->paginate(6);
+        $items = Item::orderBy($orderBy, $order)->paginate(9);
 
         return ItemResource::collection($items);
     }
@@ -33,6 +33,8 @@ class ItemController extends Controller
     {
         $item = new Item;
         $item->name = $request->input('name');
+        $item->price = $request->input('price');
+        $item->color = $request->input('color');
         $item->discription = $request->input('discription');
         if ($item->save()) {
             $item->categories()->attach($request->input('categories'));
@@ -68,7 +70,9 @@ class ItemController extends Controller
         $item->categories()->detach($item->categories);
 
         $item->name = $request->input('name');
-        $item->discription = $request->input('discription');
+        $item->price = $request->input('price');
+        $item->color = $request->input('color');
+        $item->description = $request->input('description');
         if ($item->save()) {
             $item->categories()->attach($request->input('categories'));
             return new ItemResource($item);
@@ -90,15 +94,19 @@ class ItemController extends Controller
         }
     }
 
-    public function showItem(Request $request, $item)
+    public function showItem(Item $item)
     {
-        $results = DB::table('items')
-            ->join('categories', 'categories.id', '=', 'items.id')
-            ->select('items.id', 'items.name','items.price', 'items.color', 'items.discription')
-            ->where('items.id', '=', $item)
-            ->get();
-
-        return response()->json($results);
+        return response()->json($item);
     }
+//    public function showItem(Request $request, $item)
+//    {
+//        $results = DB::table('items')
+//            ->join('categories', 'categories.id', '=', 'items.id')
+//            ->select('items.id', 'items.name','items.price', 'items.color', 'items.description')
+//            ->where('items.id', '=', $item)
+//            ->get();
+//
+//        return response()->json($results);
+//    }
 }
 

@@ -22,7 +22,6 @@ class ItemResource extends JsonResource
             'price' => $this->price,
             'color' => $this->color,
             'description' => $this->description,
-
             'categories' => CategoryResource::collection($this->categories),
             'created_at' => (string)$this->created_at,
         ];

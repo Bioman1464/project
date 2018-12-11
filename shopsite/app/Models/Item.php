@@ -22,6 +22,16 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Item whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Item whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $name
+ * @property float $price
+ * @property string $color
+ * @property string $discription
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Item whereColor($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Item whereDiscription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Item whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Item wherePrice($value)
+ * @property string $description
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Item whereDescription($value)
  */
 class Item extends Model
 {
@@ -29,11 +39,6 @@ class Item extends Model
     protected $fillable = [
         'name', 'price', 'color', 'description'
     ];
-
-
-    /*protected $fillable = [
-        'title', 'content'
-    ];*/
 
     public function categories()
     {
