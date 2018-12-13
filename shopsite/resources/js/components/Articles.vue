@@ -98,49 +98,69 @@
                         <input type="text" placeholder="Search">
                     </div>
                     <div class="col-xl-1 col-md-2 col-sm-2 col-2 trash text-right">
-                        <a href="#" title=""><img src="svg/img/trash.png" alt=""></a>
+                        <a href="#" title="" data-target='#trash' data-toggle='modal'><img src="svg/img/trash.png" alt=""></a>
                     </div>
                 </div>
         </header>
 
+        <div class='button-up' id='btn-up'>
+           <a href='#'><img src="svg/img/up.png" alt=""></a>
+        </div>
+
+        <div class="modal" tabindex="-1" role="dialog" id='trash'>
+            <div class="modal-dialog modal-wd" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Trash</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    <div class='row'>
+                        <div class='col-xl-6 d-inline-block'>
+                            <div class=''><img src="svg/img/khudi2.png" alt="" width='60' height="auto">Name of item</div>
+                            <!-- <div class='col-xl-5'></div> -->
+                        </div>
+                        <div class="col-xl-3">Volume</div>
+                        <div class="col-xl-3">Price</div>
+                    </div>
+                     </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="modal fade" id="storeItem" tabindex="-1" role="dialog" aria-labelledby="storeItemLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-        <!-- <form @submit.prevent="addItem" class="modal-content"> -->
             <form class='modal-content'>
             <div class="modal-header">
                 <h5 class="modal-title" v-if="!edit" id="exampleModalLabel">Sign up / Sign in</h5>
-                <!-- <h5 class="modal-title" v-else id="exampleModalLabel">Edit Item</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button> -->
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <h3 class='text-center'>Sign up</h3>
-
-                    
+                    <h3 class='text-center'>Sign up</h3> 
                 </div>
                 <div>
-
                 <div class='form-group'>
                     <label for="InputEmail">Email address</label>
                     <input id="InputEmail" type="email" class="form-control" placeholder="Enter Email" 
                         aria-describedby="emailHelp" v-model="user.email">
                 </div>    
-                    <!-- <select v-model="item.categories" class="custom-select" multiple>
-                        <option v-for="category in categories" v-bind:key="category.id" :value="category.id">{{category.title}}</option>
-                    </select> -->
                 </div>
                 <div class="form-group">
                     <label for='InputPassword'>Password</label>
                     <input id='InputPassword' type="password" class='form-control' placeholder="Enter Password" 
                         v-model="user.password">
-                    <!-- <textarea class="form-control" placeholder="Content" v-model="item.content"></textarea> -->
                 </div>
             </div>
             <div class="modal-footer">
                 <button @click="clearForm()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">To register</button>
             </div>
         </form>
             </div>
@@ -177,54 +197,78 @@
 
         <div class="container img-stack">
             <div class="row">
-                <div class="col-3">
-                    <div class="col-12">
-                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                          <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <img class="d-block w-100" src="svg/img/macbook.png" alt="First slide">
+                <div class="col-7">
+                    <div class="col-5">
+                        <div class="col-12">
+                            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                              <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                  <img class="d-block" src="svg/img/macbook.png" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                  <img class="d-block" src="svg/img/macbook.png" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                  <img class="d-block" src="svg/img/macbook.png" alt="Third slide">
+                                </div>
+                              </div>
                             </div>
-                            <div class="carousel-item">
-                              <img class="d-block w-100" src="svg/img/macbook.png" alt="Second slide">
+                        </div>
+                        <div class="col-12">
+                            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                              <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                  <img class="d-block" src="svg/img/macbook.png" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                  <img class="d-block" src="svg/img/macbook.png" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                  <img class="d-block" src="svg/img/macbook.png" alt="Third slide">
+                                </div>
+                              </div>
                             </div>
-                            <div class="carousel-item">
-                              <img class="d-block w-100" src="svg/img/macbook.png" alt="Third slide">
-                            </div>
-                          </div>
                         </div>
                     </div>
-                    <div class="col-12 img-stack-min">
-                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                          <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <img class="d-block w-100" src="svg/img/macbook.png" alt="First slide">
-                            </div>
-                            <div class="carousel-item">
-                              <img class="d-block w-100" src="svg/img/macbook.png" alt="Second slide">
-                            </div>
-                            <div class="carousel-item">
-                              <img class="d-block w-100" src="svg/img/macbook.png" alt="Third slide">
-                            </div>
-                          </div>
+
+                <div class="col-7">
+                <div class="col-12">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img class="d-block" src="svg/img/macbook.png" alt="First slide">
                         </div>
+                        <div class="carousel-item">
+                          <img class="d-block" src="svg/img/macbook.png" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                          <img class="d-block" src="svg/img/macbook.png" alt="Third slide">
+                        </div>
+                      </div>
                     </div>
                 </div>
-                <div class="col-6 img-stack-big">
+            </div>
+
+                </div>
+
+            
+
+                <div class="col-5 img-stack-big">
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner img-center">
                             <div class="carousel-item active">
-                              <img class="d-block" src="svg/img/ip3.png" alt="First slide">
+                              <img class="d-block" src="svg/img/macbook.png" alt="First slide">
                             </div>
                             <div class="carousel-item">
-                              <img class="d-block" src="svg/img/ip3.png" alt="Second slide">
+                              <img class="d-block" src="svg/img/macbook.png" alt="Second slide">
                             </div>
                             <div class="carousel-item">
-                              <img class="d-block" src="svg/img/ip3.png" alt="Third slide">
+                              <img class="d-block" src="svg/img/macbook.png" alt="Third slide">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-3"></div>
+                
             </div>
         </div>
 
@@ -264,20 +308,19 @@
                     <div class="row">
                         <div class="col-9 col-sm-10 col-lg-6 col-xl-4 product-block" v-for="item in items" v-bind:key="item.id">
                             <div class="col-12 product">
-                                <div class='product-img'><img src="svg/img/macbook.png" alt=""></div>
+                                <div class='product-img d-flex justify-content-center'><img src="svg/img/svitpered.png" alt=""></div>
                                 <h6 v-for="category in item.categories" v-bind:key="category.id">
                                     {{ category.title }}
                                 </h6>
-                                <h5 class='item-name'>{{ item.name }}</h5>
+                                    <h5 class='item-name'>{{ item.name }}</h5>
                                     <p class='price'>Price: {{ item.price }} rub</p>        
-                                    <a href='#' title="" @click="getProduct(item.id)" class='buy'>Button</a>       
+                                    <a href='#' title="" @click="getProduct(item.id)" class='buy'>Button</a>     
                             </div>                 
                         </div>
                     </div>
-                 </div>   
 
-                    <nav class='col-xl-12'>
-                        <ul class="pagination justify-content-center">
+                    <nav class='d-flex justify-content-center'>
+                        <ul class="pagination">
                             <div class="link-prev" v-bind:class="[{disabled: !pagination.prev_page_url}]">
                                 <button class="btn orange prev" href="#" @click="getItems(pagination.prev_page_url)">Prev</button>
                             </div>
@@ -289,6 +332,10 @@
                             </li>
                         </ul>
                     </nav>
+
+                 </div>   
+
+                    
 
             </div>    
         </div>
@@ -315,8 +362,8 @@
                     <a href="" title="">Сотрудничество</a>
                 </div>
                 <div class="col-xl-8 col-md-6 col-sm-6 col-6">
-                    <img class='float-right' src="svg/img/face.png" width="50px" alt="">
-                    <img class='float-right' src="svg/img/inst.png" width="50px" alt="">
+                    <a href='https://ru-ru.facebook.com/'><img class='float-right' src="svg/img/face.png" width="50px" alt=""></a>
+                    <a href='https://www.instagram.com/'><img class='float-right' src="svg/img/inst.png" width="50px" alt=""></a>
                     <div class='float-right social'>Мы в соцсетях: </div>
                 </div>
             </div>
@@ -330,9 +377,8 @@
 
 @media (min-width: 400px) and (max-width: 600px) {
     .price{
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     } 
-    
 }
 
 @media (min-width: 400px) and (max-width: 768px){
@@ -345,11 +391,29 @@
     .social{
         display: none;
     }
+    .pagination{
+        position: relative;
+        right: 40px;
+    }
+    .button-up{
+        position: fixed;
+        bottom: 220px;
+        left: 40px;
+    }
 }
 
 </style>
 
 <script>
+
+    jQuery(function(f){
+    var element = f('#btn-up');
+    f(window).scroll(function(){
+        element['fade'+ (f(this).scrollTop() > 1200 ? 'In': 'Out')](500);          
+    });
+
+});
+
     import { API } from "../api-common.js";
     export default {
         data() {

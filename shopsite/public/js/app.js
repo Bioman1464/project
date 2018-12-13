@@ -52593,7 +52593,7 @@ exports = module.exports = __webpack_require__(13)(false);
 
 
 // module
-exports.push([module.i, "\n@media (min-width: 400px) and (max-width: 600px) {\n.price{\r\n        margin-bottom: 60px;\n}\n}\n@media (min-width: 400px) and (max-width: 768px){\n.foot{\r\n        min-height: 200px;\n}\n.search input{\r\n        width: 130px;\n}\n.social{\r\n        display: none;\n}\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n@media (min-width: 400px) and (max-width: 600px) {\n.price{\r\n        margin-bottom: 40px;\n}\n}\n@media (min-width: 400px) and (max-width: 768px){\n.foot{\r\n        min-height: 200px;\n}\n.search input{\r\n        width: 130px;\n}\n.social{\r\n        display: none;\n}\n.pagination{\r\n        position: relative;\r\n        right: 40px;\n}\n.button-up{\r\n        position: fixed;\r\n        bottom: 220px;\r\n        left: 40px;\n}\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -52995,6 +52995,69 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+jQuery(function (f) {
+    var element = f('#btn-up');
+    f(window).scroll(function () {
+        element['fade' + (f(this).scrollTop() > 1200 ? 'In' : 'Out')](500);
+    });
+});
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -53060,12 +53123,12 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
                             case 7:
                                 _context.prev = 7;
-                                _context.t0 = _context["catch"](0);
+                                _context.t0 = _context['catch'](0);
 
                                 alert(_context.t0);
 
                             case 10:
-                            case "end":
+                            case 'end':
                                 return _context.stop();
                         }
                     }
@@ -53101,7 +53164,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             var _this2 = this;
 
             if (confirm("Delete Item?")) {
-                __WEBPACK_IMPORTED_MODULE_1__api_common_js__["a" /* API */].delete("/item/" + id).then(function (response) {
+                __WEBPACK_IMPORTED_MODULE_1__api_common_js__["a" /* API */].delete('/item/' + id).then(function (response) {
                     alert("Item has been removed");
                     _this2.getItems();
                 }).catch(function (e) {
@@ -53112,7 +53175,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         getProduct: function getProduct(id) {
             var _this3 = this;
 
-            __WEBPACK_IMPORTED_MODULE_1__api_common_js__["a" /* API */].get("/" + id).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1__api_common_js__["a" /* API */].get('/' + id).then(function (response) {
                 // alert("Item has been removed");
                 _this3.getItems();
             }).catch(function (e) {
@@ -53951,6 +54014,10 @@ var render = function() {
   return _c("main", [
     _vm._m(0),
     _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _vm._m(2),
+    _vm._v(" "),
     _c(
       "div",
       {
@@ -53983,7 +54050,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
-                _vm._m(1),
+                _vm._m(3),
                 _vm._v(" "),
                 _c("div", [
                   _c("div", { staticClass: "form-group" }, [
@@ -54071,7 +54138,7 @@ var render = function() {
                 _c(
                   "button",
                   { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-                  [_vm._v("Save changes")]
+                  [_vm._v("To register")]
                 )
               ])
             ])
@@ -54080,13 +54147,13 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _vm._m(2),
+    _vm._m(4),
     _vm._v(" "),
-    _vm._m(3),
+    _vm._m(5),
     _vm._v(" "),
     _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "row" }, [
-        _vm._m(4),
+        _vm._m(6),
         _vm._v(" "),
         _c("div", { staticClass: "col-8 col-xl-10 col-md-9 col-sm-8" }, [
           _c(
@@ -54104,7 +54171,7 @@ var render = function() {
                     "div",
                     { staticClass: "col-12 product" },
                     [
-                      _vm._m(5, true),
+                      _vm._m(7, true),
                       _vm._v(" "),
                       _vm._l(item.categories, function(category) {
                         return _c("h6", { key: category.id }, [
@@ -54143,71 +54210,71 @@ var render = function() {
                 ]
               )
             })
-          )
-        ]),
-        _vm._v(" "),
-        _c("nav", { staticClass: "col-xl-12" }, [
-          _c("ul", { staticClass: "pagination justify-content-center" }, [
-            _c(
-              "div",
-              {
-                staticClass: "link-prev",
-                class: [{ disabled: !_vm.pagination.prev_page_url }]
-              },
-              [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn orange prev",
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        _vm.getItems(_vm.pagination.prev_page_url)
+          ),
+          _vm._v(" "),
+          _c("nav", { staticClass: "d-flex justify-content-center" }, [
+            _c("ul", { staticClass: "pagination" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "link-prev",
+                  class: [{ disabled: !_vm.pagination.prev_page_url }]
+                },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn orange prev",
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          _vm.getItems(_vm.pagination.prev_page_url)
+                        }
                       }
-                    }
-                  },
-                  [_vm._v("Prev")]
+                    },
+                    [_vm._v("Prev")]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("li", { staticClass: "page-item page-number" }, [
+                _vm._v(
+                  "Page " +
+                    _vm._s(_vm.pagination.current_page) +
+                    " of " +
+                    _vm._s(_vm.pagination.last_page)
                 )
-              ]
-            ),
-            _vm._v(" "),
-            _c("li", { staticClass: "page-item page-number" }, [
-              _vm._v(
-                "Page " +
-                  _vm._s(_vm.pagination.current_page) +
-                  " of " +
-                  _vm._s(_vm.pagination.last_page)
+              ]),
+              _vm._v(" "),
+              _c(
+                "li",
+                {
+                  staticClass: "link-next",
+                  class: [{ disabled: !_vm.pagination.next_page_url }]
+                },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn orange next",
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          _vm.getItems(_vm.pagination.next_page_url)
+                        }
+                      }
+                    },
+                    [_vm._v("Next")]
+                  )
+                ]
               )
-            ]),
-            _vm._v(" "),
-            _c(
-              "li",
-              {
-                staticClass: "link-next",
-                class: [{ disabled: !_vm.pagination.next_page_url }]
-              },
-              [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn orange next",
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        _vm.getItems(_vm.pagination.next_page_url)
-                      }
-                    }
-                  },
-                  [_vm._v("Next")]
-                )
-              ]
-            )
+            ])
           ])
         ])
       ])
     ]),
     _vm._v(" "),
-    _vm._m(6)
+    _vm._m(8)
   ])
 }
 var staticRenderFns = [
@@ -54257,12 +54324,112 @@ var staticRenderFns = [
               staticClass: "col-xl-1 col-md-2 col-sm-2 col-2 trash text-right"
             },
             [
-              _c("a", { attrs: { href: "#", title: "" } }, [
-                _c("img", { attrs: { src: "svg/img/trash.png", alt: "" } })
-              ])
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "#",
+                    title: "",
+                    "data-target": "#trash",
+                    "data-toggle": "modal"
+                  }
+                },
+                [_c("img", { attrs: { src: "svg/img/trash.png", alt: "" } })]
+              )
             ]
           )
         ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "button-up", attrs: { id: "btn-up" } }, [
+      _c("a", { attrs: { href: "#" } }, [
+        _c("img", { attrs: { src: "svg/img/up.png", alt: "" } })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "modal",
+        attrs: { tabindex: "-1", role: "dialog", id: "trash" }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "modal-dialog modal-wd", attrs: { role: "document" } },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _c("div", { staticClass: "modal-header" }, [
+                _c("h5", { staticClass: "modal-title" }, [_vm._v("Trash")]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "close",
+                    attrs: {
+                      type: "button",
+                      "data-dismiss": "modal",
+                      "aria-label": "Close"
+                    }
+                  },
+                  [
+                    _c("span", { attrs: { "aria-hidden": "true" } }, [
+                      _vm._v("×")
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-body" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-xl-6 d-inline-block" }, [
+                    _c("div", {}, [
+                      _c("img", {
+                        attrs: {
+                          src: "svg/img/khudi2.png",
+                          alt: "",
+                          width: "60",
+                          height: "auto"
+                        }
+                      }),
+                      _vm._v("Name of item")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-xl-3" }, [_vm._v("Volume")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-xl-3" }, [_vm._v("Price")])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-footer" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-secondary",
+                    attrs: { type: "button", "data-dismiss": "modal" }
+                  },
+                  [_vm._v("Close")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "btn btn-primary", attrs: { type: "button" } },
+                  [_vm._v("Buy")]
+                )
+              ])
+            ])
+          ]
+        )
       ]
     )
   },
@@ -54338,83 +54505,151 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container img-stack" }, [
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-3" }, [
-          _c("div", { staticClass: "col-12" }, [
-            _c(
-              "div",
-              {
-                staticClass: "carousel slide",
-                attrs: {
-                  id: "carouselExampleSlidesOnly",
-                  "data-ride": "carousel"
-                }
-              },
-              [
-                _c("div", { staticClass: "carousel-inner" }, [
-                  _c("div", { staticClass: "carousel-item active" }, [
-                    _c("img", {
-                      staticClass: "d-block w-100",
-                      attrs: { src: "svg/img/macbook.png", alt: "First slide" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "carousel-item" }, [
-                    _c("img", {
-                      staticClass: "d-block w-100",
-                      attrs: { src: "svg/img/macbook.png", alt: "Second slide" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "carousel-item" }, [
-                    _c("img", {
-                      staticClass: "d-block w-100",
-                      attrs: { src: "svg/img/macbook.png", alt: "Third slide" }
-                    })
+        _c("div", { staticClass: "col-7" }, [
+          _c("div", { staticClass: "col-5" }, [
+            _c("div", { staticClass: "col-12" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "carousel slide",
+                  attrs: {
+                    id: "carouselExampleSlidesOnly",
+                    "data-ride": "carousel"
+                  }
+                },
+                [
+                  _c("div", { staticClass: "carousel-inner" }, [
+                    _c("div", { staticClass: "carousel-item active" }, [
+                      _c("img", {
+                        staticClass: "d-block",
+                        attrs: {
+                          src: "svg/img/macbook.png",
+                          alt: "First slide"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "carousel-item" }, [
+                      _c("img", {
+                        staticClass: "d-block",
+                        attrs: {
+                          src: "svg/img/macbook.png",
+                          alt: "Second slide"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "carousel-item" }, [
+                      _c("img", {
+                        staticClass: "d-block",
+                        attrs: {
+                          src: "svg/img/macbook.png",
+                          alt: "Third slide"
+                        }
+                      })
+                    ])
                   ])
-                ])
-              ]
-            )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-12" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "carousel slide",
+                  attrs: {
+                    id: "carouselExampleSlidesOnly",
+                    "data-ride": "carousel"
+                  }
+                },
+                [
+                  _c("div", { staticClass: "carousel-inner" }, [
+                    _c("div", { staticClass: "carousel-item active" }, [
+                      _c("img", {
+                        staticClass: "d-block",
+                        attrs: {
+                          src: "svg/img/macbook.png",
+                          alt: "First slide"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "carousel-item" }, [
+                      _c("img", {
+                        staticClass: "d-block",
+                        attrs: {
+                          src: "svg/img/macbook.png",
+                          alt: "Second slide"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "carousel-item" }, [
+                      _c("img", {
+                        staticClass: "d-block",
+                        attrs: {
+                          src: "svg/img/macbook.png",
+                          alt: "Third slide"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-12 img-stack-min" }, [
-            _c(
-              "div",
-              {
-                staticClass: "carousel slide",
-                attrs: {
-                  id: "carouselExampleSlidesOnly",
-                  "data-ride": "carousel"
-                }
-              },
-              [
-                _c("div", { staticClass: "carousel-inner" }, [
-                  _c("div", { staticClass: "carousel-item active" }, [
-                    _c("img", {
-                      staticClass: "d-block w-100",
-                      attrs: { src: "svg/img/macbook.png", alt: "First slide" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "carousel-item" }, [
-                    _c("img", {
-                      staticClass: "d-block w-100",
-                      attrs: { src: "svg/img/macbook.png", alt: "Second slide" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "carousel-item" }, [
-                    _c("img", {
-                      staticClass: "d-block w-100",
-                      attrs: { src: "svg/img/macbook.png", alt: "Third slide" }
-                    })
+          _c("div", { staticClass: "col-7" }, [
+            _c("div", { staticClass: "col-12" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "carousel slide",
+                  attrs: {
+                    id: "carouselExampleSlidesOnly",
+                    "data-ride": "carousel"
+                  }
+                },
+                [
+                  _c("div", { staticClass: "carousel-inner" }, [
+                    _c("div", { staticClass: "carousel-item active" }, [
+                      _c("img", {
+                        staticClass: "d-block",
+                        attrs: {
+                          src: "svg/img/macbook.png",
+                          alt: "First slide"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "carousel-item" }, [
+                      _c("img", {
+                        staticClass: "d-block",
+                        attrs: {
+                          src: "svg/img/macbook.png",
+                          alt: "Second slide"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "carousel-item" }, [
+                      _c("img", {
+                        staticClass: "d-block",
+                        attrs: {
+                          src: "svg/img/macbook.png",
+                          alt: "Third slide"
+                        }
+                      })
+                    ])
                   ])
-                ])
-              ]
-            )
+                ]
+              )
+            ])
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-6 img-stack-big" }, [
+        _c("div", { staticClass: "col-5 img-stack-big" }, [
           _c(
             "div",
             {
@@ -54429,29 +54664,27 @@ var staticRenderFns = [
                 _c("div", { staticClass: "carousel-item active" }, [
                   _c("img", {
                     staticClass: "d-block",
-                    attrs: { src: "svg/img/ip3.png", alt: "First slide" }
+                    attrs: { src: "svg/img/macbook.png", alt: "First slide" }
                   })
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "carousel-item" }, [
                   _c("img", {
                     staticClass: "d-block",
-                    attrs: { src: "svg/img/ip3.png", alt: "Second slide" }
+                    attrs: { src: "svg/img/macbook.png", alt: "Second slide" }
                   })
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "carousel-item" }, [
                   _c("img", {
                     staticClass: "d-block",
-                    attrs: { src: "svg/img/ip3.png", alt: "Third slide" }
+                    attrs: { src: "svg/img/macbook.png", alt: "Third slide" }
                   })
                 ])
               ])
             ]
           )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-3" })
+        ])
       ])
     ])
   },
@@ -54505,9 +54738,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "product-img" }, [
-      _c("img", { attrs: { src: "svg/img/macbook.png", alt: "" } })
-    ])
+    return _c(
+      "div",
+      { staticClass: "product-img d-flex justify-content-center" },
+      [_c("img", { attrs: { src: "svg/img/svitpered.png", alt: "" } })]
+    )
   },
   function() {
     var _vm = this
@@ -54551,15 +54786,19 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-xl-8 col-md-6 col-sm-6 col-6" }, [
-            _c("img", {
-              staticClass: "float-right",
-              attrs: { src: "svg/img/face.png", width: "50px", alt: "" }
-            }),
+            _c("a", { attrs: { href: "https://ru-ru.facebook.com/" } }, [
+              _c("img", {
+                staticClass: "float-right",
+                attrs: { src: "svg/img/face.png", width: "50px", alt: "" }
+              })
+            ]),
             _vm._v(" "),
-            _c("img", {
-              staticClass: "float-right",
-              attrs: { src: "svg/img/inst.png", width: "50px", alt: "" }
-            }),
+            _c("a", { attrs: { href: "https://www.instagram.com/" } }, [
+              _c("img", {
+                staticClass: "float-right",
+                attrs: { src: "svg/img/inst.png", width: "50px", alt: "" }
+              })
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "float-right social" }, [
               _vm._v("Мы в соцсетях: ")

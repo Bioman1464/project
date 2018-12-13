@@ -8,6 +8,48 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+.price{
+    position: absolute;
+    bottom: 12px;
+    left: 10px;
+    font-size: 20px;
+}
+
+.product{
+    height: 520px;
+    border: 3px solid rgba(224, 208, 195, 1);
+    margin-bottom: 10px;
+    background: white;
+}
+
+.product-block{
+    padding: 5px;
+}
+
+.product-img{
+    height: 270px;
+}
+
+.product-img img{
+    height: 100%;
+    width: auto;
+
+}
+
+.button-up img{
+    height: 80px;
+}
+
+.button-up {
+    position: fixed;
+    bottom: 160px;
+    left: 40px;
+}
+
+.modal-footer, .modal-header{
+    background: rgba(230, 190, 158, 0.5);
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -149,8 +191,8 @@ header{
     font-style: normal;
 }
 
-.product{
-    height: 400px;
+/* .product{
+    height: 450px;
     border: 3px solid rgba(224, 208, 195, 1);
     position: relative;
     margin-bottom: 10px;
@@ -163,20 +205,20 @@ header{
 }
 
 .product-img{
-    /* width: auto;
-    height: auto; */
-    /* justify-content: center;
+    width: auto;
+    height: auto;
+    justify-content: center;
     align-items: center;
-    margin-top: 10px; */
-    max-width: 1000px;
-    max-height: 1000px;
+    margin-top: 10px;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 .product-img img{
     width: 100%;
     height: auto;
     margin-top: 15px;
-}
+} */
 
 .item-name{
     margin-top: 20px;
@@ -279,13 +321,6 @@ header{
 .buy:hover:before {
     left: 150px;
     transition: .5s ease-in-out;
-}
-
-.price{
-    position: absolute;
-    bottom: 15px;
-    left: 10px;
-    font-size: 20px;
 }
 
 .carousel-item img{
