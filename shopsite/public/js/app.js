@@ -53175,9 +53175,9 @@ jQuery(function (f) {
         getProduct: function getProduct(id) {
             var _this3 = this;
 
-            __WEBPACK_IMPORTED_MODULE_1__api_common_js__["a" /* API */].get('/product/' + id).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1__api_common_js__["a" /* API */].get('/' + id).then(function (response) {
                 // alert("Item has been removed");
-                _this3.getItems(item.id);
+                _this3.getItems();
             }).catch(function (e) {
                 alert(e);
             });
@@ -53185,22 +53185,20 @@ jQuery(function (f) {
 
 
         /*async addItem() {
-            
+            if (this.edit === false) {
                 try {
-                    const response = await API.post(`/categories/`, {
-                        id: this.item.id,
-                        title: this.item.name,
-                        price: this.item.price,
-                        color: this.item.color,
-                        description: this.item.description
+                    const response = await API.post(`/item/`, {
+                        title: this.item.title,
+                        content: this.item.content,
+                        categories: this.item.categories.category
                     });
-                    // this.clearForm();
-                    // this.getItems();
+                    this.clearForm();
+                    this.getItems();
                     alert("Item has been added");
                 } catch (error) {
                     alert(error);
                 }
-            
+            }
         },*/
         clearForm: function clearForm() {
             // this.edit = false;
@@ -54197,7 +54195,7 @@ var render = function() {
                         "a",
                         {
                           staticClass: "buy",
-                          attrs: { title: "" },
+                          attrs: { href: "#", title: "" },
                           on: {
                             click: function($event) {
                               _vm.getProduct(item.id)
@@ -54743,7 +54741,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "product-img d-flex justify-content-center" },
-      [_c("img", { attrs: { src: "svg/img/1khudi1.png", alt: "" } })]
+      [_c("img", { attrs: { src: "svg/img/svitpered.png", alt: "" } })]
     )
   },
   function() {
@@ -54766,18 +54764,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("br"),
             _vm._v(" "),
-            _c(
-              "a",
-              {
-                attrs: {
-                  href: "",
-                  title: "",
-                  "data-target": "#trash",
-                  "data-toggle": "modal"
-                }
-              },
-              [_vm._v("Корзина")]
-            )
+            _c("a", { attrs: { href: "", title: "" } }, [_vm._v("Корзина")])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-xl-2 col-md-3 col-sm-3 col-3" }, [
@@ -54917,7 +54904,7 @@ exports = module.exports = __webpack_require__(13)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -54958,14 +54945,22 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
+            /*items: [],
+            item: {
+                id: "",
+                name: "",
+                content: "",
+                categories: [],
+                category: {
+                    id: "",
+                    title: ""
+                }
+            },*/
 
             items: [],
             item: {
@@ -55162,64 +55157,48 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("main", [
-    _c("div", { staticClass: "col-8 col-xl-10 col-md-9 col-sm-8" }, [
-      _c("div", { staticClass: "row" }, [
+  return _c(
+    "main",
+    _vm._l(_vm.items, function(item) {
+      return _c("Article", { key: item.id }, [
+        _c("h3", [_vm._v(_vm._s(item.name))]),
+        _vm._v(" "),
+        _c("span", [
+          _vm._v(_vm._s(_vm._f("moment")(item.created_at, "DD.MM.YYYY")))
+        ]),
+        _vm._v(" "),
+        _c("h4", [_vm._v("Categories:")]),
+        _vm._v(" "),
         _c(
-          "div",
-          { staticClass: "col-9 col-sm-10 col-lg-6 col-xl-4 product-block" },
-          [
-            _c("div", { staticClass: "col-12 product" }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("h6", [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(_vm.category.title) +
-                    "\n                "
-                )
-              ]),
-              _vm._v(" "),
-              _c("h5", { staticClass: "item-name" }, [
-                _vm._v(_vm._s(_vm.item.name))
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "price" }, [
-                _vm._v("Price: " + _vm._s(_vm.item.price) + " rub")
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "buy",
-                  attrs: { href: "", title: "", id: "myLink" },
-                  on: {
-                    click: function($event) {
-                      _vm.getProduct(_vm.item.id)
-                    }
-                  }
-                },
-                [_vm._v("Button")]
-              )
+          "ul",
+          _vm._l(item.categories, function(category) {
+            return _c("li", { key: category.id }, [
+              _c("a", { attrs: { href: "#" } }, [
+                _vm._v(_vm._s(category.title))
+              ])
             ])
-          ]
+          })
+        ),
+        _vm._v(" "),
+        _c("p", [_vm._v("\n            " + _vm._s(item.name) + "\n        ")]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-danger",
+            on: {
+              click: function($event) {
+                _vm.deleteItem(item.id)
+              }
+            }
+          },
+          [_vm._v("Delete")]
         )
       ])
-    ])
-  ])
+    })
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "product-img d-flex justify-content-center" },
-      [_c("img", { attrs: { src: "svg/img/1khudi1.png", alt: "" } })]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
