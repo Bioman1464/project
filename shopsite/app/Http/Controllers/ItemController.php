@@ -69,6 +69,7 @@ class ItemController extends Controller
 
         $item->categories()->detach($item->categories);
 
+        $item->image = $request->input('image');
         $item->name = $request->input('name');
         $item->price = $request->input('price');
         $item->color = $request->input('color');
