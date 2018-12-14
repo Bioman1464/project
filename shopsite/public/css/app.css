@@ -10475,9 +10475,10 @@ a.text-dark:focus {
 
 .product {
   height: 520px;
-  border: 3px solid #e0d0c3;
   margin-bottom: 10px;
-  background: white;
+  background: #ecece7;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
 .product-block {
@@ -10515,7 +10516,7 @@ a.text-dark:focus {
 }
 
 .foot {
-  background: #e6be9e;
+  background: rgba(255, 163, 101, 0.7);
   height: 140px;
 }
 
@@ -10535,9 +10536,9 @@ a.text-dark:focus {
   font-style: normal;
 }
 
-.img-stack-min {
-  margin-top: 30px;
-}
+/* .img-stack-min{
+    margin-top: 30px;
+} */
 
 .bonch-merch {
   font-size: 24px;
@@ -10572,7 +10573,7 @@ main {
 
 header {
   height: 60px;
-  background: #e6be9e;
+  background: rgba(255, 163, 101, 0.7);
   width: 100%;
 }
 
@@ -10621,14 +10622,10 @@ header {
   height: 40px;
   margin-top: 10px;
   margin-left: 15px;
-  /* background: green; */
 }
 
 #demo {
-  /* height: 240px; */
-  /* background: pink; */
   margin-bottom: 40px;
-  /* margin-top: 20px; */
 }
 
 .page-number {
@@ -10655,35 +10652,6 @@ header {
   font-weight: bold;
   font-style: normal;
 }
-
-/* .product{
-    height: 450px;
-    border: 3px solid rgba(224, 208, 195, 1);
-    position: relative;
-    margin-bottom: 10px;
-    margin-right: 5px;
-    background: white;
-}
-
-.product-block{
-    padding: 5px;
-}
-
-.product-img{
-    width: auto;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    max-width: 400px;
-    max-height: 400px;
-}
-
-.product-img img{
-    width: 100%;
-    height: auto;
-    margin-top: 15px;
-} */
 
 .item-name {
   margin-top: 20px;
@@ -10772,11 +10740,8 @@ header {
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
   position: absolute;
-  right: 5px;
-  bottom: 5px;
-  /* position: relative; */
-  /*     top: 240px;
-    right: 10px; */
+  right: 8px;
+  bottom: 8px;
 }
 
 .buy:before {
@@ -10807,22 +10772,15 @@ header {
   max-width: 100%;
 }
 
-.carousel-control-prev-icon {
-  /* background-color: black; */
-}
-
 .products-filter {
   margin-bottom: 20px;
-  background: white;
   margin-top: 5px;
-  border: 2px solid #e0d0c3;
 }
 
 .carousel-indicators li {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  /*     background-color: gray; */
 }
 
 .carousel-indicators .active {
@@ -10851,14 +10809,5 @@ header {
 .nav-btn-next button {
   min-width: 50px;
   padding: 0 10px;
-}
-
-footer {
-  height: 50px;
-  background: #383431;
-}
-
-.footer-panel {
-  background: #383431;
 }
 

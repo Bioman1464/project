@@ -1,19 +1,22 @@
 <template>
     <main>
-    <Article v-for="item in items" v-bind:key="item.id">
-            <h3>{{ item.name }}</h3>
-            <span>{{ item.created_at | moment("DD.MM.YYYY") }}</span>
-            <h4>Categories:</h4>
-            <ul>
-                <li v-for="category in item.categories" v-bind:key="category.id">
-                    <a href="#">{{category.title}}</a>
-                </li>
-            </ul>
-            <p>
-                {{ item.name }}
-            </p>
-            <button @click="deleteItem(item.id)" class="btn btn-danger">Delete</button>
-    </Article>
+
+    <div class="col-8 col-xl-10 col-md-9 col-sm-8">  
+        <div class="row">
+            <div class="col-9 col-sm-10 col-lg-6 col-xl-4 product-block">
+                <div class="col-12 product">
+                    <div class='product-img d-flex justify-content-center'><img src="svg/img/1khudi1.png" alt=""></div>
+                    <h6>
+                        {{ category.title }}
+                    </h6>
+                        <h5 class='item-name'>{{ item.name }}</h5>
+                        <p class='price'>Price: {{ item.price }} rub</p>        
+                        <a href='' title="" @click="getProduct(item.id)" class='buy' id='myLink'>Button</a>     
+                </div>                 
+            </div>
+        </div>
+    </div>
+
     </main>
 </template>
 
@@ -26,17 +29,6 @@
     export default {
         data() {
             return {
-                /*items: [],
-                item: {
-                    id: "",
-                    name: "",
-                    content: "",
-                    categories: [],
-                    category: {
-                        id: "",
-                        title: ""
-                    }
-                },*/
 
                 items: [],
                 item: {
@@ -59,9 +51,6 @@
                     email_verified_at: "",
                     password: ""                    
                 },
-
-
-
 
                 item_id: "",
                 ordering: {

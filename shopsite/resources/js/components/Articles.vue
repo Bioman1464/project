@@ -308,13 +308,13 @@
                     <div class="row">
                         <div class="col-9 col-sm-10 col-lg-6 col-xl-4 product-block" v-for="item in items" v-bind:key="item.id">
                             <div class="col-12 product">
-                                <div class='product-img d-flex justify-content-center'><img src="svg/img/svitpered.png" alt=""></div>
+                                <div class='product-img d-flex justify-content-center'><img src="svg/img/1khudi1.png" alt=""></div>
                                 <h6 v-for="category in item.categories" v-bind:key="category.id">
                                     {{ category.title }}
                                 </h6>
                                     <h5 class='item-name'>{{ item.name }}</h5>
                                     <p class='price'>Price: {{ item.price }} rub</p>        
-                                    <a href='#' title="" @click="getProduct(item.id)" class='buy'>Button</a>     
+                                    <a title="" @click="getProduct(item.id)" class='buy'>Button</a>     
                             </div>                 
                         </div>
                     </div>
@@ -352,7 +352,7 @@
                     <br>
                     <a href="" title="">FAQ</a>
                     <br>
-                    <a href="" title="">Корзина</a>
+                    <a href="" title="" data-target='#trash' data-toggle='modal'>Корзина</a>
                 </div>
                 <div class="col-xl-2 col-md-3 col-sm-3 col-3">
                     <a href="" title="">Авторизация</a>
@@ -493,10 +493,10 @@
             },
 
             getProduct(id){              
-                    API.get(`/${id}`)
+                    API.get(`/product/${id}`)
                         .then(response => {
                             // alert("Item has been removed");
-                            this.getItems();
+                            this.getItems(item.id);
                         })
                         .catch(e => {
                             alert(e);
@@ -504,20 +504,22 @@
             },
             
             /*async addItem() {
-                if (this.edit === false) {
+                
                     try {
-                        const response = await API.post(`/item/`, {
-                            title: this.item.title,
-                            content: this.item.content,
-                            categories: this.item.categories.category
+                        const response = await API.post(`/categories/`, {
+                            id: this.item.id,
+                            title: this.item.name,
+                            price: this.item.price,
+                            color: this.item.color,
+                            description: this.item.description
                         });
-                        this.clearForm();
-                        this.getItems();
+                        // this.clearForm();
+                        // this.getItems();
                         alert("Item has been added");
                     } catch (error) {
                         alert(error);
                     }
-                }
+                
             },*/
             clearForm() {
                 // this.edit = false;
