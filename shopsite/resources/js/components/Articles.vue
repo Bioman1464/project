@@ -6,9 +6,9 @@
             <hr>
         </header>
         <div>
-        
-        
-        
+
+
+
             <nav class="pagination" style="float: left;">
         <li v-bind:class="[{disabled: !pagination.prev_page_url}]" class="page-item">
             <a class="page-link" href="#" @click="getItems(pagination.prev_page_url)">Previous</a></li>
@@ -18,10 +18,10 @@
         <li v-bind:class="[{disabled: !pagination.next_page_url}]" class="page-item">
             <a class="page-link" href="#" @click="getItems(pagination.next_page_url)">Next</a></li>
             </nav>
-        
-        
-        
-        
+
+
+
+
             <span class="total">Total: {{ pagination.total }} items</span>
             <div style="float: right;">
         <div>
@@ -32,8 +32,8 @@
         </div>
             </div>
         </div>
-        
-        
+
+
         <Article v-for="item in items" v-bind:key="item.id">
             <h3>{{ item.title }}</h3>
             <span>{{ item.created_at | moment("DD.MM.YYYY") }}</span>
@@ -48,8 +48,8 @@
             </p>
             <button @click="deleteItem(item.id)" class="btn btn-danger">Delete</button>
         </Article>
-        
-        
+
+
         Modal
         <div class="modal fade" id="storeItem" tabindex="-1" role="dialog" aria-labelledby="storeItemLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -143,18 +143,18 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <h3 class='text-center'>Sign up</h3> 
+                    <h3 class='text-center'>Sign up</h3>
                 </div>
                 <div>
                 <div class='form-group'>
                     <label for="InputEmail">Email address</label>
-                    <input id="InputEmail" type="email" class="form-control" placeholder="Enter Email" 
+                    <input id="InputEmail" type="email" class="form-control" placeholder="Enter Email"
                         aria-describedby="emailHelp" v-model="user.email">
-                </div>    
+                </div>
                 </div>
                 <div class="form-group">
                     <label for='InputPassword'>Password</label>
-                    <input id='InputPassword' type="password" class='form-control' placeholder="Enter Password" 
+                    <input id='InputPassword' type="password" class='form-control' placeholder="Enter Password"
                         v-model="user.password">
                 </div>
             </div>
@@ -165,7 +165,7 @@
         </form>
             </div>
         </div>
-        
+
         <div class='container-fluid'>
             <div class="row">
                 <div id="demo" class="carousel slide" data-ride="carousel">
@@ -251,7 +251,7 @@
 
                 </div>
 
-            
+
 
                 <div class="col-5 img-stack-big">
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
@@ -268,7 +268,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
 
@@ -304,7 +304,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-8 col-xl-10 col-md-9 col-sm-8">  
+                <div class="col-8 col-xl-10 col-md-9 col-sm-8">
                     <div class="row">
                         <div class="col-9 col-sm-10 col-lg-6 col-xl-4 product-block" v-for="item in items" v-bind:key="item.id">
                             <div class="col-12 product">
@@ -313,9 +313,9 @@
                                     {{ category.title }}
                                 </h6>
                                     <h5 class='item-name'>{{ item.name }}</h5>
-                                    <p class='price'>Price: {{ item.price }} rub</p>        
-                                    <a href='#' title="" @click="getProduct(item.id)" class='buy'>Button</a>     
-                            </div>                 
+                                    <p class='price'>Price: {{ item.price }} rub</p>
+                                    <a href='#' title="" @click="getProduct(item.id)" class='buy'>Button</a>
+                            </div>
                         </div>
                     </div>
 
@@ -333,13 +333,13 @@
                         </ul>
                     </nav>
 
-                 </div>   
+                 </div>
 
-                    
 
-            </div>    
+
+            </div>
         </div>
-    
+
 
     <footer class='container-fluid foot'>
         <div class='container'>
@@ -378,7 +378,7 @@
 @media (min-width: 400px) and (max-width: 600px) {
     .price{
         margin-bottom: 40px;
-    } 
+    }
 }
 
 @media (min-width: 400px) and (max-width: 768px){
@@ -409,7 +409,7 @@
     jQuery(function(f){
     var element = f('#btn-up');
     f(window).scroll(function(){
-        element['fade'+ (f(this).scrollTop() > 1200 ? 'In': 'Out')](500);          
+        element['fade'+ (f(this).scrollTop() > 1200 ? 'In': 'Out')](500);
     });
 
 });
@@ -437,8 +437,8 @@
                     name: "",
                     email: "",
                     email_verified_at: "",
-                    password: ""    
-                }, 
+                    password: ""
+                },
                 item_id: "",
                 ordering: {
                     orderBy: "created_at",
@@ -492,7 +492,7 @@
                 }
             },
 
-            getProduct(id){              
+            getProduct(id){
                     API.get(`/${id}`)
                         .then(response => {
                             // alert("Item has been removed");
@@ -500,9 +500,9 @@
                         })
                         .catch(e => {
                             alert(e);
-                        });  
+                        });
             },
-            
+
             /*async addItem() {
                 if (this.edit === false) {
                     try {
