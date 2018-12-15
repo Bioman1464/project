@@ -13,7 +13,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                         </div>
-                        <div class="mainmenu pull-left">
+                        <div class="mainmenu">
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a href="index.html" class="active">Home</a></li>
                                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
@@ -25,12 +25,7 @@
                                         <li><a href="login.html">Login</a></li> 
                                     </ul>
                                 </li> 
-                                <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
-                                        <li><a href="blog-single.html">Blog Single</a></li>
-                                    </ul>
-                                </li> 
+                                
                                 <li><a href="404.html">404</a></li>
                                 <li><a href="contact-us.html">Contact</a></li>
                             </ul>
@@ -45,72 +40,41 @@
             </div>
         </div><!--/header-bottom-->
     </header><!--/header-->
-    
-    <section id="slider"><!--slider-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div id="slider-carousel" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#slider-carousel" data-slide-to="1"></li>
-                            <li data-target="#slider-carousel" data-slide-to="2"></li>
-                        </ol>
-                        
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <!-- <div class="col-sm-6">
-                                    <h1><span>E</span>-SHOPPER</h1>
-                                    <h2>Free E-Commerce Template</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                    <button type="button" class="btn btn-default get">Get it now</button>
-                                </div> -->
-                                <div class="col-sm-12">
-                                    <img src="{{ asset('images/home/11.png') }}" class="girl img-responsive" alt="" />
-                                    <!-- <img src="{{ asset('images/home/pricing.png') }}"  class="pricing" alt="" /> -->
-                                </div>
-                            </div>
 
-                            <div class="item">
-                                <!-- <div class="col-sm-6">
-                                    <h1><span>E</span>-SHOPPER</h1>
-                                    <h2>100% Responsive Design</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                    <button type="button" class="btn btn-default get">Get it now</button>
-                                </div> -->
-                                <div class="col-sm-12">
-                                    <img src="{{ asset('images/home/22.png') }}" class="girl img-responsive" alt="" />
-                                    <!-- <img src="{{ asset('images/home/pricing.png') }}"  class="pricing" alt="" /> -->
-                                </div>
-                            </div>
-                            
-                            <!-- <div class="item">
-                                <div class="col-sm-6">
-                                    <h1><span>E</span>-SHOPPER</h1>
-                                    <h2>Free Ecommerce Template</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                    <button type="button" class="btn btn-default get">Get it now</button>
-                                </div>
-                                <div class="col-sm-6">
-                                    <img src="{{ asset('images/home/girl3.jpg') }}" class="girl img-responsive" alt="" />
-                                    <img src="{{ asset('images/home/pricing.png') }}" class="pricing" alt="" />
-                                </div>
-                            </div> -->
-                            
+    
+    
+    <section id="slider"><!-- slider -->
+
+        <div class='container-fluid'>
+            <div class="row">
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <!-- <li data-target="#demo" data-slide-to="2"></li> -->
+                    </ul>
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="images/home/11.png" alt="Los Angeles">
                         </div>
-                        
-                        <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                        <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
+                        <div class="item">
+                            <img src="images/home/22.png" alt="Chicago">
+                        </div>
                     </div>
-                    
+                    <!-- Left and right controls -->
+                    <a href="#demo" class="left control-carousel hidden-xs" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a href="#demo" class="right control-carousel hidden-xs" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+
                 </div>
             </div>
         </div>
-    </section><!--/slider-->
+    </section><!-- /slider -->
     
     <section>
         <div class="container">
@@ -240,13 +204,6 @@
                             </div>
                         </div><!--/brands_products-->
                         
-                        <div class="price-range"><!--price-range-->
-                            <h2>Price Range</h2>
-                            <div class="well text-center">
-                                 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-                                 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
-                            </div>
-                        </div><!--/price-range-->
                         
                         <div class="shipping text-center"><!--shipping-->
                             <img src="{{ asset('images/home/shipping.jpg') }}" alt="" />
@@ -265,25 +222,12 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                         <div class="productinfo text-center">
-                                            {{ $product->id }}
+                                            <!-- {{ $product->id }} -->
                                             <img src="{{Storage::disk('local')->url('product_images/'.$product->image)}}" alt="" />
                                             <h2>{{ $product->price }}</h2>
                                             <p>{{ $product->name }}</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="{{ route('AddToCartProduct', ['id'=>$product->id]) }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                         </div>
-                                        <div class="product-overlay">
-                                            <div class="overlay-content">
-                                                <h2>{{ $product->price }}</h2>
-                                                <p>{{ $product->name }}</p>
-                                                <a href="{{ route('AddToCartProduct', ['id'=>$product->id]) }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -581,102 +525,7 @@
                         </div>
                     </div><!--/category-tab-->
                     
-                    <div class="recommended_items">recommended_items
-                        <h2 class="title text-center">recommended items</h2>
-                        
-                        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="item active">   
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/recommend1.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/recommend2.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/recommend3.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">  
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/recommend1.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/recommend2.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/recommend3.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                             <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                                <i class="fa fa-angle-left"></i>
-                              </a>
-                              <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                                <i class="fa fa-angle-right"></i>
-                              </a>          
-                        </div>
-                    </div><!-- /recommended_items -->
+                    
                     
                 </div>
             </div>

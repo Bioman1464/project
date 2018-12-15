@@ -34,7 +34,6 @@
 
 }
 
-
 /* sm */
 @media (min-width: 768px) and (max-width: 991px) {
    
@@ -48,10 +47,6 @@
 
 .item h2{
 	font-size: 24px;
-}
-
-.girl{
-	margin-left: 0;
 }
 
 .pricing{
@@ -172,7 +167,7 @@
 	padding-bottom: 15px;
 }
 
-.mainmenu ul li  a{
+.mainmenu ul li a{
 	color: #fff;
 }
 
