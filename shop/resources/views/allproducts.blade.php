@@ -163,6 +163,7 @@
                         </div>
 
                         @endforeach
+                        {{$products->links()}}
                         
                         
                     </div><!--features_items-->
@@ -198,6 +199,7 @@
                                 
                             </div>
                             @endforeach
+
                             </div>
                         </div>
                     </div><!--/category-tab-->

@@ -32,8 +32,8 @@
         <div id='navbar' class='navbar-collapse collapse'>
           <ul class='nav navbar-nav navbar-right'>
             <li><a href="/products" title="">Home</a></li>
-            <li><a href="/admin/index" title="">Dashboard</a></li>
-            <li><a href="#" title="">Settings</a></li>
+            <li><a href="/admin/products" title="">Dashboard</a></li>
+
           </ul>
         </div>
       </div>
@@ -46,9 +46,9 @@
                 <ul class="nav flex-column">
                   <li class='active nav-item'><a href="/admin/index" title="">Overview <span class='sr-only'>(current)</span></a></li>
                   <li class='nav-item'><a href="/admin/createProductForm">Insert</a></li>
-                  <li class='nav-item'><a href="#">Edit</a></li>
+
                   <li class='nav-item'><a href="/admin/users">Users</a></li>
-                  <li class='nav-item'><a href="#">Analytics</a></li>
+
                 </ul>
           
           </div>
