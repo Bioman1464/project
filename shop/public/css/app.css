@@ -31,9 +31,7 @@
         right: 40px;
     }
     .button-up{
-        position: fixed;
-        bottom: 220px;
-        left: 40px;
+        top: 400px;
     }
 }
 

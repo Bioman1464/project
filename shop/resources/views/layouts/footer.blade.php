@@ -38,6 +38,7 @@
         </div>
     </div>
   
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/btnup.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>

@@ -1,5 +1,10 @@
-jQuery(function(f){
-    var element = f('#btn-up');
-    f(window).scroll(function(){
-        element['fade'+ (f(this).scrollTop() > 2200 ? 'In': 'Out')](1000);
+ $(window).scroll(function() {
+        if ($(this).scrollTop() > 600) {
+            if ($('#btn-up').is(':hidden')) {
+                $('#btn-up').css({opacity : 1}).fadeIn('slow');
+            }
+        } else { $('#btn-up').stop(true, false).fadeOut('fast'); }
+    });
+        $('#btn-up').click(function() {
+        $('html, body').stop().animate({scrollTop : 0}, 300);
     });
