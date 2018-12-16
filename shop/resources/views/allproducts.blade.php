@@ -164,7 +164,9 @@
                     
                     </div>
 
-                    
+                    <div class="shipping text-center"><!--shipping-->
+                            <img src="{{ asset('images/home/bonch2.png') }}" alt="" />
+                    </div><!--/shipping-->
 
                 </div>
                 
@@ -198,9 +200,7 @@
                     
                 </div><!--/category-tab-->
 
-                    <div class="shipping text-center"><!--shipping-->
-                            <img src="{{ asset('images/home/bonch2.png') }}" alt="" />
-                    </div><!--/shipping-->
+                    
 
                     <div class='button-up' id='btn-up'>
                         <a href='#'><img src="images/home/up1.png" alt=""></a>
