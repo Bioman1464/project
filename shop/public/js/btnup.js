@@ -5,6 +5,4 @@
             }
         } else { $('#btn-up').stop(true, false).fadeOut('fast'); }
     });
-        $('#btn-up').click(function() {
-        $('html, body').stop().animate({scrollTop : 0}, 300);
-    });
+
