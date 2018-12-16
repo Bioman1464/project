@@ -32,7 +32,7 @@
                             </td>
                             <td class="cart_description">
                                 <h4><a href="">{{$item['data']['name']}}</a></h4>
-                                <p>{{$item['data']['description']}} - {{$item['data']['type']}}</p>
+                                <p>{{$item['data']['type']}}</p>
                                 <p>id: {{$item['data']['id']}}</p>
                             </td>
                             <td class="cart_price">
@@ -72,8 +72,7 @@
                             <li>Shipping Cost <span>Free</span></li>
                             <li>Total <span>{{ $cartItems->totalPrice }}</span></li>
                         </ul>
-                            <a class="btn btn-default update" href="">Update</a>
-                            <a class="btn btn-default check_out" href="">Check Out</a>
+                            
                     </div>
                 </div>
         </div>

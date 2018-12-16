@@ -16,7 +16,7 @@
                     <a href="/login"><i class=""></i> Login</a>
                     @endif
                     <br>
-                    <a href="" title="">Contact</a>
+                    <a href="/contacts" title="">Contact</a>
                 </div>
                 <div class="col-xl-8 col-md-6 col-sm-6 col-6">
                     <div class='pull-right instface'>
@@ -42,7 +42,6 @@
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/btnup.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

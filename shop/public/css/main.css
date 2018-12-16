@@ -738,8 +738,7 @@ h2.title:before{
 
 .category-products .panel-default .panel-heading .panel-title a {
   color: #696763;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  /* font-family: 'Roboto', sans-serif; */
   text-decoration: none;
   text-transform: uppercase;
 }

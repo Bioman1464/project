@@ -13,34 +13,48 @@
 @media (min-width: 400px) and (max-width: 768px){
     .foot{
         min-height: 170px;
-    }
+    } 
+
     .instface{
         /* position: relative; */
         bottom: 90px !important;
     }
+
     .search input{
         width: 130px;
     }
+
     .social{
         position: relative;
         bottom: 120px;
         left: 95px;
     }
+
     .pagination{
         position: relative;
         right: 40px;
     }
+
     .button-up{
         top: 350px;
     }
+
     .bonch-merch{
         margin-left: 5px;
     }
 }
 
 .shipping img{
-    max-width: 260px;
-    
+    max-width: 260px;  
+}
+
+.panel-title{
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.panel-title a:hover{
+    font-weight: bold;
 }
 
 .shipping{
