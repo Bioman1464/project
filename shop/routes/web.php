@@ -42,10 +42,19 @@ Route::get('admin/editProductImageForm/{id}', ["uses"=>"Admin\AdminProductsContr
 //update product image
 Route::post('admin/updataProductImage/{id}', ["uses"=>"Admin\AdminProductsController@updateProductImage", 'as'=>'adminUpdateProductImage']);
 
-//update product
+//update product data
 Route::post('admin/updataProduct/{id}', ["uses"=>"Admin\AdminProductsController@updateProduct", 'as'=>'adminUpdateProduct']);
 
 //contacts page
 Route::get('/contacts', function(){
     return view('contacts');
-});
+    });
+
+//display create product form
+Route::get('admin/createProductForm', ["uses"=>"Admin\AdminProductsController@createProductForm", 'as'=>'adminCreateProductForm']);
+
+//send new product data to database
+Route::post('admin/sendCrateProductProduct', ["uses"=>"Admin\AdminProductsController@sendCreateProductForm", 'as'=>'adminSendCreateProductForm']);
+
+//delete product
+Route::get('admin/deleteProduct/{id}', ["uses"=>"Admin\AdminProductsController@deleteProduct", 'as'=>'adminDeleteProduct']);
