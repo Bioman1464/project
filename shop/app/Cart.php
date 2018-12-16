@@ -8,7 +8,10 @@ class Cart
     public $totalQuantity;
     public $totalPrice;
 
-    // Cart constructor.
+    /**
+     * Cart constructor.
+     *
+     * */
     public function __construct($prevCart)
     {
         if($prevCart != null){
