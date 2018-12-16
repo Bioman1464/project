@@ -44,45 +44,45 @@
     </header><!--/header-->
 
  
-    <section id="slider"><!-- slider -->
+<!--     <section id="slider">slider
 
-        <div class='container-fluid'>
-            <div class="row">
-                <div id="demo" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ul class="carousel-indicators">
-                        <li data-target="#demo" data-slide-to="0" class="active"></li>
-                        <li data-target="#demo" data-slide-to="1"></li>
-                        <li data-target="#demo" data-slide-to="2"></li>
-                        <li data-target="#demo" data-slide-to="3"></li>
-                    </ul>
-                    <!-- The slideshow -->
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img src="images/home/11.png" alt="">
-                        </div>
-                        <div class="item">
-                            <img src="images/home/22.png" alt="">
-                        </div>
-                        <div class="item">
-                            <img src="images/home/Milos2.png" alt="">
-                        </div>
-                        <div class="item">
-                            <img src="images/home/Banner.png" alt="">
-                        </div>
-                    </div>
-                    <!-- Left and right controls -->
-                    <a href="#demo" class="left control-carousel hidden-xs" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a href="#demo" class="right control-carousel hidden-xs" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-
+<div class='container-fluid'>
+    <div class="row">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            Indicators
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="3"></li>
+            </ul>
+            The slideshow
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="images/home/11.png" alt="">
+                </div>
+                <div class="item">
+                    <img src="images/home/22.png" alt="">
+                </div>
+                <div class="item">
+                    <img src="images/home/Milos2.png" alt="">
+                </div>
+                <div class="item">
+                    <img src="images/home/Banner.png" alt="">
                 </div>
             </div>
+            Left and right controls
+            <a href="#demo" class="left control-carousel hidden-xs" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a href="#demo" class="right control-carousel hidden-xs" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+
         </div>
-    </section><!-- /slider -->
+    </div>
+</div>
+</section>/slider -->
     
     <section>
         <div class="container">
@@ -191,6 +191,8 @@
                         </div>
 
                         @endforeach
+
+                       
                         
                     </div><!--features_items-->
                     

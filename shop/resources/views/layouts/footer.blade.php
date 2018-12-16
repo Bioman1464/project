@@ -20,8 +20,8 @@
                 </div>
                 <div class="col-xl-8 col-md-6 col-sm-6 col-6">
                     <div class='pull-right instface'>
-                        <a href='https://www.instagram.com/'><img src="images/home/inst.png"  alt=""></a>
-                        <a href='https://ru-ru.facebook.com/'><img src="images/home/face.png"  alt=""></a>
+                        <a href='https://www.instagram.com/'><img src="{{ asset('images/home/inst.png') }}"  alt=""></a>
+                        <a href='https://ru-ru.facebook.com/'><img src="{{ asset('images/home/face.png') }}"  alt=""></a>
                     </div>
                     <div class='text-right social'>Мы в соцсетях: </div>
                 </div>

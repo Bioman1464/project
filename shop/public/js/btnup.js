@@ -1,5 +1,5 @@
  $(window).scroll(function() {
-        if ($(this).scrollTop() > 600) {
+        if ($(this).scrollTop() > 500) {
             if ($('#btn-up').is(':hidden')) {
                 $('#btn-up').css({opacity : 1}).fadeIn('slow');
             }
