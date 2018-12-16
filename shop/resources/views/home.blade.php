@@ -17,6 +17,10 @@
                     You are logged in!
 
                     <p>{!! Auth::user()->name !!}</p>
+                    <br>
+                    <a class="nav-link text-right" href="{{ url('/admin/products') }}">
+                        Admin panel!
+                    </a>
                 </div>
             </div>
         </div>

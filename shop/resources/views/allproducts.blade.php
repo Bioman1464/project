@@ -18,8 +18,6 @@
                                 <li><a href="/products" class="active">Home</a></li>
                                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        
-                                        
 
                                         @if(Auth::check())
                                         <li><a href="/home"><i class="fa fa-lock"></i> Profile</a></li>
@@ -56,15 +54,22 @@
                     <ul class="carousel-indicators">
                         <li data-target="#demo" data-slide-to="0" class="active"></li>
                         <li data-target="#demo" data-slide-to="1"></li>
-                        <!-- <li data-target="#demo" data-slide-to="2"></li> -->
+                        <li data-target="#demo" data-slide-to="2"></li>
+                        <li data-target="#demo" data-slide-to="3"></li>
                     </ul>
                     <!-- The slideshow -->
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img src="images/home/11.png" alt="Los Angeles">
+                            <img src="images/home/11.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/home/22.png" alt="Chicago">
+                            <img src="images/home/22.png" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="images/home/Milos2.png" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="images/home/Banner.png" alt="">
                         </div>
                     </div>
                     <!-- Left and right controls -->
@@ -93,12 +98,12 @@
                             
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">ИКСС</a></h4>
+                                    <h4 class="panel-title"><a href="#IKSS" data-toggle="prod">ИКСС</a></h4>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">ИСИТ</a></h4>
+                                    <h4 class="panel-title"><a href="#ISIT" data-toggle="prod">ИСИТ</a></h4>
                                 </div>
                             </div>
                             <div class="panel panel-default">
@@ -143,7 +148,7 @@
 
                         @foreach ($products as $product)
 
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 prod" id='{{ $product->type }}'>
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                         <div class="productinfo text-center">
