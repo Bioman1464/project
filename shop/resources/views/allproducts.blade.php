@@ -27,7 +27,7 @@
                                         <li><a href="/login"><i class="fa fa-lock"></i> Login</a></li>
                                         @endif
                                         <li><a href="{{ route('cartproducts') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li> 
-                                        <li><a href="contact-us.html">Contact</a></li>
+                                        <li><a href="/contacts">Contact</a></li>
                                     </ul>
                                 </li> 
                                 
@@ -210,7 +210,7 @@
                         
                         
                         <div class="shipping text-center"><!--shipping-->
-                            <img src="{{ asset('images/home/shipping.jpg') }}" alt="" />
+                            <img src="{{ asset('images/home/bonch2.png') }}" alt="" />
                         </div><!--/shipping-->
                     
                     </div>
@@ -244,20 +244,16 @@
                     <div class="category-tab"><!--category-tab-->
                         <div class="col-sm-12">
                             <ul class="nav nav-tabs">
-                                <li class="active"><a href="#shirt" data-toggle="tab">Shirt</a></li>
-                                <li><a href="#shoes" data-toggle="tab">Shoes</a></li>
-                                <li><a href="#sunglass" data-toggle="tab">Backpack</a></li>
-                                <li><a href="#kids" data-toggle="tab">Kids</a></li>
-                                <li><a href="#poloshirt" data-toggle="tab">Polo shirt</a></li>
+                                <li class="active"><a href="#t-shirt" data-toggle="tab">T-Shirt</a></li>
+                                <li><a href="#hoodie" data-toggle="tab">Hoodie</a></li>
+                                <li><a href="#backpack" data-toggle="tab">Backpack</a></li>
+                                <li><a href="#sweater" data-toggle="tab">Sweater</a></li>
+                                
                             </ul>
                         </div>
                         <div class="tab-content">
                             @foreach ($products as $product)
                             <div class="tab-pane fade active in" id="{{ $product->name }}" >
-
-                                
-
-                                
 
                                 <div class="col-sm-3">
                                     <div class="product-image-wrapper">

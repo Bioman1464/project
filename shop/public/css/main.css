@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  /* background:; */
+  background: white;
   position: relative;
   font-weight:400px;
 }
@@ -555,7 +555,7 @@ ul.sub-menu {
 }
 
 .footer-bottom {
-  background: rgba(247, 188, 111, 0.8);
+  background: rgba(247, 188, 111, 1);
   /* padding-top: 10px; */
   padding-left: 20px;
 }

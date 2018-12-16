@@ -5,7 +5,7 @@
         <div class="container">
             <div class="breadcrumbs">
                 <ol class="breadcrumb">
-                  <li><a href="#">Home</a></li>
+                  <li><a href="/products">Home</a></li>
                   <li class="active">Shopping Cart</li>
                 </ol>
             </div>
@@ -40,9 +40,9 @@
                             </td>
                             <td class="cart_quantity">
                                 <div class="cart_quantity_button">
-                                    <a class="cart_quantity_up" href=""> + </a>
-                                    <input class="cart_quantity_input" type="text" name="quantity" value="{{ $item['quantity'] }}" autocomplete="off" size="2">
-                                    <a class="cart_quantity_down" href=""> - </a>
+                                    <p style="font-size:18px">{{ $item['quantity'] }}</p>
+                                    <!-- <input class="cart_quantity_input" type="text" name="quantity" value="{{ $item['quantity'] }}" autocomplete="off" size="2"> -->
+                                    
                                 </div>
                             </td>
                             <td class="cart_total">
