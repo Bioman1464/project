@@ -18,11 +18,16 @@
                                 <li><a href="index.html" class="active">Home</a></li>
                                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
+                                        <li><a href="/products">Products</a></li>
                                         <li><a href="product-details.html">Product Details</a></li> 
                                         <li><a href="checkout.html">Checkout</a></li> 
-                                        <li><a href="cart.html">Cart</a></li> 
-                                        <li><a href="login.html">Login</a></li> 
+                                        <li><a href="{{ route('cartproducts') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li> 
+
+                                        @if(Auth::check())
+                                        <li><a href="/home"><i class="fa fa-lock"></i> Profile</a></li>
+                                        @else
+                                        <li><a href="/login"><i class="fa fa-lock"></i> Login</a></li>
+                                        @endif
                                     </ul>
                                 </li> 
                                 
