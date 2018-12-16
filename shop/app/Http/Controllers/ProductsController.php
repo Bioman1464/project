@@ -32,12 +32,24 @@ class ProductsController extends Controller
         $cart->addItem($id, $product);
         $request->session()->put('cart', $cart);
 
-        dump($cart);
-        // return redirect()->route('allProducts');
+        //dump($cart);
+        return redirect()->route('allProducts');
     }
 
 
     public function showCart(){
+
+        $cart = Session::get('cart');
+
+        //cart is not empty
+        if($cart){
+
+            return view('cartproducts',['cartItems'=>$cart]);
+            //cart is empty
+        }else{
+
+            return redirect()->route('allProducts');
+        }
 
     }
 
