@@ -31,7 +31,7 @@
     <td>{{ $product['description'] }}</td>
     <td>{{ $product['type'] }}</td>
     <td>{{ $product['price'] }}</td>
-    <td><a href="{{ route('adminEditProductImageForm', ['id'=>$product['id']]) }}" class='btn btn-primary' title="">EditImage</a></td>
+    <td><a href="{{ route('adminEditProductImageForm', ['id'=>$product['id']]) }}" class='btn btn-primary' title="">Edit Image</a></td>
     <td><a href="{{ route('adminEditProductForm', ['id'=>$product['id']]) }}" class='btn btn-primary' title="">Edit</a></td>
     <td><a href="" class='btn btn-warning' title="">Delete</a></td>
 </tr>
