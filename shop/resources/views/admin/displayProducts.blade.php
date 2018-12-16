@@ -1,4 +1,4 @@
-@extends(layouts.admin)
+@extends('layouts.admin')
 
 @section('body')
 
@@ -21,17 +21,18 @@
         <tbody>
 
 
-@foreach($products as $producs)
+@foreach($products as $product)
 <tr>
     <td>{{ $product['id'] }}</td>
-    <td> <img src="<?php echo Storage::url($product['image']);?>" alt="<?php echo Storage::url($product['image']);?>" width='100' height='100' style='max-height: 220px'> </td>
+    <td> <img src="<?php echo Storage::url($product['image']); ?>"
+         alt="<?php echo Storage::url($product['image']); ?>" width='100' height='100' style="max-height:220px"></td>
     <td>{{ $product['name'] }}</td>
     <td>{{ $product['description'] }}</td>
     <td>{{ $product['type'] }}</td>
     <td>${{ $product['price'] }}</td>
-    <td><a href="{{ route('admin.products.editImageForm', ['id'=>$product['id']]) }}" class='btn btn-primary' title="">EditImage</a></td>
-    <td><a href="{{ route('admin.products.editForm', ['id'=>$product['id']]) }}" class='btn btn-primary' title="">Edit</a></td>
-    <td><a href="{{ route('admin.products.delete', ['id'=>$product['id']]) }}" class='btn btn-warning' title="">Delete</a></td>
+    <td><a href="{{ route('admin.editProductImageForm', ['id'=>$product['id']]) }}" class='btn btn-primary' title="">EditImage</a></td>
+    <td><a href="{{ route('admin.editProductForm', ['id'=>$product['id']]) }}" class='btn btn-primary' title="">Edit</a></td>
+    <td><a href="{{ route('admin.deleteProduct', ['id'=>$product['id']]) }}" class='btn btn-warning' title="">Delete</a></td>
 </tr>
 
 @endforeach
