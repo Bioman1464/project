@@ -12,7 +12,7 @@
 
 @media (min-width: 400px) and (max-width: 768px){
     .foot{
-        min-height: 200px;
+        min-height: 150px;
     }
     .instface{
         position: relative;
@@ -43,6 +43,19 @@
     height: auto;
 }
 
+.col-sm-3 .productinfo img{
+    max-height: 200px;
+}
+
+.button-up img{
+    height: 80px;
+}
+
+.button-up {
+    position: fixed;
+    bottom: 160px;
+    left: 40px;
+}
 
 /* .instface{
     display: flex;
@@ -98,7 +111,7 @@
 
 .foot{
     background: rgba(247, 188, 111, 0.8);
-    height: 140px;
+    height: 110px;
 }
 
 .foot-nav{

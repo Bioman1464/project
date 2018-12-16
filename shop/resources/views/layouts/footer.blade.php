@@ -5,23 +5,23 @@
             </div>
             <div class="row foot-nav">
                 <div class="col-xl-2 col-md-3 col-sm-3 col-3">
-                    <a href="" title="">Поддержка</a>
+                    <a href="/products" title="">Home</a>
                     <br>
-                    <a href="" title="">FAQ</a>
-                    <br>
-                    <a href="" title="">Корзина</a>
+                    <a href="{{ route('cartproducts') }}"><i class=""></i> Cart</a>
                 </div>
                 <div class="col-xl-2 col-md-3 col-sm-3 col-3">
-                    <a href="" title="">Авторизация</a>
+                    @if(Auth::check())
+                    <a href="/home"><i class=""></i> Profile</a>
+                    @else
+                    <a href="/login"><i class=""></i> Login</a>
+                    @endif
                     <br>
-                    <a href="" title="">Terms of service</a>
-                    <br>
-                    <a href="" title="">Сотрудничество</a>
+                    <a href="" title="">Contact</a>
                 </div>
                 <div class="col-xl-8 col-md-6 col-sm-6 col-6">
                     <div class='pull-right instface'>
-                        <a href='https://ru-ru.facebook.com/'><img src="images/home/inst.png" width="50px" alt=""></a>
-                        <a href='https://www.instagram.com/'><img src="images/home/face.png" width="50px" alt=""></a>
+                        <a href='https://www.instagram.com/'><img src="images/home/inst.png" width="50px" alt=""></a>
+                        <a href='https://ru-ru.facebook.com/'><img src="images/home/face.png" width="50px" alt=""></a>
                     </div>
                     <div class='text-right social'>Мы в соцсетях: </div>
                 </div>
@@ -39,9 +39,8 @@
     </div>
   
     <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/btnup.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/price-range.js') }}"></script>
-    <script src="{{ asset('js/jquery.prettyPhoto.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </body>
