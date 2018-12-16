@@ -33,6 +33,16 @@ class ProductsController extends Controller
         return view("isitProducts", compact("products"));
     }
 
+    public function tshirtProducts(){
+        $products = DB::table('products')->where('name', '=', 't-shirt')->get();
+        return view("tshirtProducts", compact("products"));
+    }
+
+    public function hoodieProducts(){
+        $products = DB::table('products')->where('name', '=', 'hoodie')->get();
+        return view("hoodieProducts", compact("products"));
+    }
+
 
 
 

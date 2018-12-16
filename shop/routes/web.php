@@ -22,6 +22,12 @@ Route::get('products/ikss', ["uses"=>"ProductsController@ikssProducts", 'as'=>'i
 //isit
 Route::get('products/isit', ["uses"=>"ProductsController@isitProducts", 'as'=>'isitProducts']);
 
+//tshirt
+Route::get('products/tshirt', ["uses"=>"ProductsController@tshirtProducts", 'as'=>'tshirtProducts']);
+//hoodie
+Route::get('products/hoodie', ["uses"=>"ProductsController@hoodieProducts", 'as'=>'hoodieProducts']);
+
+
 Route::get('product/addToCart/{id}',['uses'=>'ProductsController@addProductToCart','as'=>'AddToCartProduct']);
 
 //show cart items

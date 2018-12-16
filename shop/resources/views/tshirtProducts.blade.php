@@ -192,9 +192,7 @@
 
                         @endforeach
 
-                        <div class='text-center'>
-                            {{$products->links()}}
-                        </div>
+                        
                         
                     </div><!--features_items-->
                     
