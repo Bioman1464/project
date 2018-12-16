@@ -2,16 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
 
 
-    <title>@yield('title')</title>
+
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <link href="{{asset ('css/dashboard.css')}}" rel="stylesheet">
 
   </head>
 
@@ -31,7 +33,7 @@
           <ul class='nav navbar-nav navbar-right'>
             <li><a href="/" title="">Home</a></li>
             <li><a href="/admin/index" title="">Dashboard</a></li>
-            <li><a href="/" title="">Settings</a></li>
+            <li><a href="#" title="">Settings</a></li>
           </ul>
         </div>
       </div>
@@ -39,8 +41,8 @@
 
     <div>
       <div>
-        <div>
-          <ul>
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
             <li class='active'><a href="/admin/index" title="">Overview <span class='sr-only'>(current)</span></a></li>
             <li><a href="/admin/insertForm">Insert</a></li>
             <li><a href="#">Edit</a></li>
