@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap">
       <div class='container-fluid'>
         <div class='navbar-header'>
           <button type="button" class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar' aria-expanded='false' aria-controls='navbar'>
@@ -39,30 +39,29 @@
       </div>
     </nav>
 
-    <div>
-      <div>
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class='active'><a href="/admin/index" title="">Overview <span class='sr-only'>(current)</span></a></li>
-            <li><a href="/admin/insertForm">Insert</a></li>
-            <li><a href="#">Edit</a></li>
-            <li><a href="/admin/users"></a></li>
-            <li><a href="#">Analytics</a></li>
-          </ul>
-          <ul class='nav nav-sidebar'>
-            
-          </ul>
-          <ul class='nav nav-sidebar'>
-            
-          </ul>
-        </div>
-        <div class='col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main'>
-          <h1 class='page-header'>Dashboard</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block sidebar">
+          <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                  <li class='active nav-item'><a href="/admin/index" title="">Overview <span class='sr-only'>(current)</span></a></li>
+                  <li class='nav-item'><a href="/admin/insertForm">Insert</a></li>
+                  <li class='nav-item'><a href="#">Edit</a></li>
+                  <li class='nav-item'><a href="/admin/users">Users</a></li>
+                  <li class='nav-item'><a href="#">Analytics</a></li>
+                </ul>
+          
+          </div>
+        </nav>
 
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+          <h2>Section title</h2>
           @yield('body')
-        </div>
+        </main>
       </div>
     </div>
+
 
 
     <!-- Bootstrap core JavaScript
