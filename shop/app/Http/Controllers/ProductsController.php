@@ -22,6 +22,21 @@ class ProductsController extends Controller
         return view("allproducts", compact("products"));
     }
 
+
+    public function ikssProducts(){
+        $products = DB::table('products')->where('type', '=', 'IKSS')->get();
+        return view("ikssProducts", compact("products"));
+    }
+
+    public function isitProducts(){
+        $products = DB::table('products')->where('type', '=', 'ISIT')->get();
+        return view("isitProducts", compact("products"));
+    }
+
+
+
+
+
     public function addProductToCart(Request $request,$id){
         // print_r($id);
 

@@ -17,6 +17,11 @@ Route::get('/', function () {
 
 Route::get('products', ["uses"=>"ProductsController@index", 'as'=>'allProducts']);
 
+//ikss
+Route::get('products/ikss', ["uses"=>"ProductsController@ikssProducts", 'as'=>'ikssProducts']);
+//isit
+Route::get('products/isit', ["uses"=>"ProductsController@isitProducts", 'as'=>'isitProducts']);
+
 Route::get('product/addToCart/{id}',['uses'=>'ProductsController@addProductToCart','as'=>'AddToCartProduct']);
 
 //show cart items

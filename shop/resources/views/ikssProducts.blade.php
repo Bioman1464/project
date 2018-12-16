@@ -94,12 +94,12 @@
                             
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="{{ route('ikssProducts') }}">ИКСС</a></h4>
+                                    <h4 class="panel-title"><a href="#IKSS" data-toggle="prod">ИКСС</a></h4>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="{{ route('isitProducts') }}">ИСИТ</a></h4>
+                                    <h4 class="panel-title"><a href="#ISIT" data-toggle="prod">ИСИТ</a></h4>
                                 </div>
                             </div>
                             <div class="panel panel-default">
@@ -144,7 +144,7 @@
 
                         @foreach ($products as $product)
 
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 prod" id='{{ $product->type }}'>
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                         <div class="productinfo text-center">
@@ -160,9 +160,9 @@
 
                         @endforeach
 
-                        <div class='text-center'>
+                        <!-- <div class='text-center'>
                             {{$products->links()}}
-                        </div>
+                        </div> -->
                         
                     </div><!--features_items-->
                     
