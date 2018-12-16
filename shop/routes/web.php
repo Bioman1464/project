@@ -34,16 +34,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin/products', ["uses"=>"Admin\AdminProductsController@index", 'as'=>'adminDisplayProducts'])->middleware('restrictToAdmin');
 
 //display edit product form
-Route::get('admin/editProductForm/{id}', ["uses"=>"Admin\AdminProductsController@editProductForm", 'as'=>'adminEditProductForm']);
+Route::get('admin/editProductForm/{id}', ["uses"=>"Admin\AdminProductsController@editProductForm", 'as'=>'adminEditProductForm'])->middleware('restrictToAdmin');
 
 //display edit product image form
-Route::get('admin/editProductImageForm/{id}', ["uses"=>"Admin\AdminProductsController@editProductImageForm", 'as'=>'adminEditProductImageForm']);
+Route::get('admin/editProductImageForm/{id}', ["uses"=>"Admin\AdminProductsController@editProductImageForm", 'as'=>'adminEditProductImageForm'])->middleware('restrictToAdmin');
 
 //update product image
-Route::post('admin/updataProductImage/{id}', ["uses"=>"Admin\AdminProductsController@updateProductImage", 'as'=>'adminUpdateProductImage']);
+Route::post('admin/updataProductImage/{id}', ["uses"=>"Admin\AdminProductsController@updateProductImage", 'as'=>'adminUpdateProductImage'])->middleware('restrictToAdmin');
 
 //update product data
-Route::post('admin/updataProduct/{id}', ["uses"=>"Admin\AdminProductsController@updateProduct", 'as'=>'adminUpdateProduct']);
+Route::post('admin/updataProduct/{id}', ["uses"=>"Admin\AdminProductsController@updateProduct", 'as'=>'adminUpdateProduct'])->middleware('restrictToAdmin');
 
 //contacts page
 Route::get('/contacts', function(){

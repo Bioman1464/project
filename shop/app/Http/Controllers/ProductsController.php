@@ -17,7 +17,7 @@ class ProductsController extends Controller
         1=> ["name"=> "Iphone", "category"=>"smart phones", "price" =>1000],
         2=> ["name"=> "Iphone", "category"=>"smart phones", "price" =>1000]];*/
 
-        $products = Product::all();
+        $products = Product::paginate(3);
 
         return view("allproducts", compact("products"));
     }
