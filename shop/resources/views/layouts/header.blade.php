@@ -41,7 +41,7 @@
                                 <li><a href="{{ route('cartproducts') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 
                                 @if(Auth::check())
-                                <li><a href="#"><i class="fa fa-lock"></i> Profile</a></li>
+                                <li><a href="/home"><i class="fa fa-lock"></i> Profile</a></li>
                                 @else
                                 <li><a href="/login"><i class="fa fa-lock"></i> Login</a></li>
                                 @endif
