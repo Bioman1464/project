@@ -3,7 +3,7 @@
 @section('body')
 
 <div class="table-responsive">
-        <form action="/admin/update/{{$product->id}}" method="post">
+        <form action="/admin/updateProduct/{{$product->id}}" method="post">
 
             {{csrf_field()}}
 

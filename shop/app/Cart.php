@@ -28,7 +28,7 @@ class Cart
 
     public function addItem($id,$product){
 
-        $price = (int) str_replace("$", "", $product->price);
+        $price = (int) str_replace("₽", "", $product->price);
 
         if(array_key_exists($id,$this->items)){
             $productToAdd = $this->items[$id];

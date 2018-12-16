@@ -47,12 +47,24 @@ class AdminProductsController extends Controller
 
             return redirect()->route("adminDisplayProducts");
 
-
         }else{
 
             $error = "No Image was Selected";
             return $error;
+
         }
+    }
+
+    public function updateProduct(Request $request,$id){
+        $name = $request->input('name');
+        $description = $request->input('description');
+        $type = $request->input('type');
+        $price = $request->input('price');
+
+        $updateArray = array("name"=>$name, "description"=>$description, "type"=>$type, "price"=>$price);
+
+        DB::table('products')->where('id',$id)->update($updateArray);
+        return redirect()->route("adminDisplayProducts");
 
     }
 }

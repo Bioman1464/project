@@ -16,7 +16,7 @@
                     <a href="/login"><i class=""></i> Login</a>
                     @endif
                     <br>
-                    <a href="" title="">Contact</a>
+                    <a href="/contacts" title="">Contact</a>
                 </div>
                 <div class="col-xl-8 col-md-6 col-sm-6 col-6">
                     <div class='pull-right instface'>

@@ -41,3 +41,11 @@ Route::get('admin/editProductImageForm/{id}', ["uses"=>"Admin\AdminProductsContr
 
 //update product image
 Route::post('admin/updataProductImage/{id}', ["uses"=>"Admin\AdminProductsController@updateProductImage", 'as'=>'adminUpdateProductImage']);
+
+//update product
+Route::post('admin/updataProduct/{id}', ["uses"=>"Admin\AdminProductsController@updateProduct", 'as'=>'adminUpdateProduct']);
+
+//contacts page
+Route::get('/contacts', function(){
+    return view('contacts');
+});
