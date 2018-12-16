@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ["uses"=>"ProductsController@index", 'as'=>'allProducts']);
 
 Route::get('products', ["uses"=>"ProductsController@index", 'as'=>'allProducts']);
 
