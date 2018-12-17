@@ -46,9 +46,6 @@
                 <ul class="nav flex-column">
                   <li class='active nav-item'><a href="/admin/index" title="">Overview <span class='sr-only'>(current)</span></a></li>
                   <li class='nav-item'><a href="/admin/createProductForm">Insert</a></li>
-
-                  <li class='nav-item'><a href="/admin/users">Users</a></li>
-
                 </ul>
           
           </div>

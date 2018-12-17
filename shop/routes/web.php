@@ -25,6 +25,8 @@ Route::get('products/tshirt', ["uses"=>"ProductsController@tshirtProducts", 'as'
 //hoodie
 Route::get('products/hoodie', ["uses"=>"ProductsController@hoodieProducts", 'as'=>'hoodieProducts']);
 
+Route::get('search', ["uses"=>"ProductsController@search", 'as'=>'searchProducts']);
+
 
 Route::get('product/addToCart/{id}',['uses'=>'ProductsController@addProductToCart','as'=>'AddToCartProduct']);
 
@@ -49,10 +51,10 @@ Route::get('admin/editProductForm/{id}', ["uses"=>"Admin\AdminProductsController
 Route::get('admin/editProductImageForm/{id}', ["uses"=>"Admin\AdminProductsController@editProductImageForm", 'as'=>'adminEditProductImageForm'])->middleware('restrictToAdmin');
 
 //update product image
-Route::post('admin/updataProductImage/{id}', ["uses"=>"Admin\AdminProductsController@updateProductImage", 'as'=>'adminUpdateProductImage'])->middleware('restrictToAdmin');
+Route::post('admin/updateProductImage/{id}', ["uses"=>"Admin\AdminProductsController@updateProductImage", 'as'=>'adminUpdateProductImage'])->middleware('restrictToAdmin');
 
 //update product data
-Route::post('admin/updataProduct/{id}', ["uses"=>"Admin\AdminProductsController@updateProduct", 'as'=>'adminUpdateProduct'])->middleware('restrictToAdmin');
+Route::post('admin/updateProduct/{id}', ["uses"=>"Admin\AdminProductsController@updateProduct", 'as'=>'adminUpdateProduct'])->middleware('restrictToAdmin');
 
 //contacts page
 Route::get('/contacts', function(){
@@ -63,7 +65,8 @@ Route::get('/contacts', function(){
 Route::get('admin/createProductForm', ["uses"=>"Admin\AdminProductsController@createProductForm", 'as'=>'adminCreateProductForm']);
 
 //send new product data to database
-Route::post('admin/sendCrateProductProduct', ["uses"=>"Admin\AdminProductsController@sendCreateProductForm", 'as'=>'adminSendCreateProductForm']);
+Route::post('admin/sendCreateProductForm', ["uses"=>"Admin\AdminProductsController@sendCreateProductForm", 'as'=>'adminSendCreateProductForm']);
 
 //delete product
 Route::get('admin/deleteProduct/{id}', ["uses"=>"Admin\AdminProductsController@deleteProduct", 'as'=>'adminDeleteProduct']);
+

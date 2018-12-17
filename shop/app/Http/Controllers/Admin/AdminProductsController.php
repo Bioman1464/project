@@ -22,7 +22,7 @@ class AdminProductsController extends Controller
     }
 
     public function deleteProduct($id){
-        $product = Product::file($id);
+        $product = Product::find($id);
         $exists = Storage::disk('local')->exists("public/product_images/".$product->image);
         if($exists){
             Storage::delete('public/product_images/'.$product->image);
@@ -45,24 +45,23 @@ class AdminProductsController extends Controller
         $type = $request->input('type');
         $price = $request->input('price');
 
-        Validator::make($request->all(), ['image'=>"required|image|mimes:jpg,png,jpeg|max:5000"])->validata();
-        $ext = $request->file('image')->getClientOriginalExtension();
+        Validator::make($request->all(),['image'=>"required|file|mimes:jpg,png,jpeg|max:5000"])->validate();
+        $ext = $request->file("image")->getClientOriginalExtension();
         $stringImageReFormat = str_replace(" ","",$request->input('name'));
 
         $imageName = $stringImageReFormat.".".$ext;
-        $imageEncoded = File::get( $request->image);
+        $imageEncoded = File::get($request->image);
 
-        Storage::disk('local')->put('public/product_images/'.'$imageName',$imageEncoded);
+        Storage::disk('local')->put('public/product_images/'.$imageName,$imageEncoded);
 
         $newProductArray = array("name"=>$name, "description"=>$description,"image"=>$imageName, "type"=>$type, "price"=>$price);
-        $created = DB::table('products')->insert($newProductArray);
+        $created = DB::table("products")->insert($newProductArray);
 
-        return redirect()->route("adminDisplayProducts");
-
-        if($created){
+        if ($created)
+        {
             return redirect()->route("adminDisplayProducts");
         }else{
-            return "Product is not created";
+            return "Product was not Created";
         }
 
 
@@ -75,14 +74,16 @@ class AdminProductsController extends Controller
 
     }
     public function updateProductImage(Request $request, $id){
-        Validator::make($request->all(), ['image'=>"required|image|mimes:jpg,png,jpeg|max:5000"])->validata();
+        Validator::make($request->all(), ['image'=>"required|file|image|mimes:jpg,png,jpeg|max:5000"])->validate();
 
-        if($request->hasfile("image")){
-            $product = Product::find();
+        if($request->hasFile("image")){
+            $product = Product::find($id);
             $exists = Storage::disk('local')->exists("public/product_images/".$product->image);
+            //delete old images
             if($exists){
                 Storage::delete('public/product_images/'.$product->image);
             }
+            //upload new image
             $ext = $request->file('image')->getClientOriginalExtension();
             $request->image->storeAs("public/product_images/",$product->image);
 
