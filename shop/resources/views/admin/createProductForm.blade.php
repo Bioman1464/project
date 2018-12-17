@@ -11,7 +11,7 @@
             </div>
         @endif
         <h2>Create New Product</h2>
-        <form action="/admin/sendCreateProductForm" method="post" enctype="multipart/from-data">
+        <form action="/admin/sendCreateProductForm" method="post" enctype="multpart/form-data">
             {{csrf_field()}}
             <div class="form-group">
                 <label for="name">Name</label>

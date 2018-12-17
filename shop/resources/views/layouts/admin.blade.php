@@ -27,10 +27,11 @@
             <span class='icon-bar'></span>
             <span class='icon-bar'></span>
           </button>
-          <a class='navbar-brand' href="#" title="">Admin Panel</a>
+          {{--<a class='navbar-brand' href="#" title="">Admin Panel</a>--}}
+          <h3 class="adminpan">Admin panel</h3>
         </div>
         <div id='navbar' class='navbar-collapse collapse'>
-          <ul class='nav navbar-nav navbar-right'>
+          <ul class='nav navbar-nav navbar-right navdash'>
             <li><a href="/products" title="">Home</a></li>
             <li><a href="/admin/products" title="">Dashboard</a></li>
 
@@ -44,7 +45,7 @@
         <nav class="col-md-2 d-none d-md-block sidebar">
           <div class="sidebar-sticky">
                 <ul class="nav flex-column">
-                  <li class='active nav-item'><a href="/admin/index" title="">Overview <span class='sr-only'>(current)</span></a></li>
+                  <li class='active nav-item'><a href="/admin/products" title="">Overview <span class='sr-only'>(current)</span></a></li>
                   <li class='nav-item'><a href="/admin/createProductForm">Insert</a></li>
                 </ul>
           

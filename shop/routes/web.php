@@ -11,7 +11,12 @@
 |
 */
 
-Route::get('/', ["uses"=>"ProductsController@index", 'as'=>'allProducts']);
+//redirect to shop page
+Route::get('/', function () {
+    return redirect('/products');
+});
+
+//Route::get('/', ["uses"=>"ProductsController@index", 'as'=>'allProducts']);
 
 Route::get('products', ["uses"=>"ProductsController@index", 'as'=>'allProducts']);
 
@@ -65,7 +70,7 @@ Route::get('/contacts', function(){
 Route::get('admin/createProductForm', ["uses"=>"Admin\AdminProductsController@createProductForm", 'as'=>'adminCreateProductForm']);
 
 //send new product data to database
-Route::post('admin/sendCreateProductForm', ["uses"=>"Admin\AdminProductsController@sendCreateProductForm", 'as'=>'adminSendCreateProductForm']);
+Route::post('admin/sendCreateProductForm/', ["uses"=>"Admin\AdminProductsController@sendCreateProductForm", 'as'=>'adminSendCreateProductForm']);
 
 //delete product
 Route::get('admin/deleteProduct/{id}', ["uses"=>"Admin\AdminProductsController@deleteProduct", 'as'=>'adminDeleteProduct']);

@@ -45,16 +45,16 @@ class AdminProductsController extends Controller
         $type = $request->input('type');
         $price = $request->input('price');
 
-        Validator::make($request->all(),['image'=>"required|file|mimes:jpg,png,jpeg|max:5000"])->validate();
+        Validator::make($request->all(),['image'=>"required|max:5000"])->validate();
         $ext = $request->file("image")->getClientOriginalExtension();
         $stringImageReFormat = str_replace(" ","",$request->input('name'));
 
         $imageName = $stringImageReFormat.".".$ext;
         $imageEncoded = File::get($request->image);
-
         Storage::disk('local')->put('public/product_images/'.$imageName,$imageEncoded);
 
         $newProductArray = array("name"=>$name, "description"=>$description,"image"=>$imageName, "type"=>$type, "price"=>$price);
+
         $created = DB::table("products")->insert($newProductArray);
 
         if ($created)
@@ -74,7 +74,7 @@ class AdminProductsController extends Controller
 
     }
     public function updateProductImage(Request $request, $id){
-        Validator::make($request->all(), ['image'=>"required|file|image|mimes:jpg,png,jpeg|max:5000"])->validate();
+        Validator::make($request->all(), ['image'=>"required|image|mimes:jpg,png,jpeg|max:5000"])->validate();
 
         if($request->hasFile("image")){
             $product = Product::find($id);
